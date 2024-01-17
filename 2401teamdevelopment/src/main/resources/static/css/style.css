@@ -5,6 +5,41 @@ header{
 p{
 	font-size: 20px;
 }
+
+.my-p{
+	text-align: center;
+	margin-top: 130px;
+}
+
+.my-icon{
+	width: 600px;
+	display: flex;
+	margin: 10px auto 0;
+}
+.c-icon{
+	margin: 0 auto;
+}
+
+.cp_ipselect {
+	overflow: hidden;
+	width: 90%;
+	text-align: center;
+}
+.cp_ipselect select {
+	width: 100%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
 .contents{
 	margin-top: 70px;
 }
@@ -13,7 +48,6 @@ p{
 
 .ki-table{
 	margin: 0 auto;
-	border: solid;
 }
 
 table td{
@@ -24,7 +58,8 @@ table td{
 	padding: 0 2px;
 }
 
-.khg{
+
+.gyou{
 	width: 50%;
 	margin: 0 auto;
 	display: flex;
@@ -36,7 +71,7 @@ table td{
 	color: #ffb103;
 }
 
-.khbox{
+.box{
 	width: 520px;
 	height: 30px;
 	border-radius: 5px;
@@ -50,7 +85,7 @@ table td{
 	color: #ffffff;
 }
 
-.khbox-big{
+.sr-box{
 	width: 520px;
 	height: 70px;
 	border-radius: 5px;
@@ -59,7 +94,7 @@ table td{
 	margin-top: 20px;
 }
 
-.khbox-big-b{
+.b-box{
 	width: 520px;
 	height: 70px;
 	border-radius: 5px;
@@ -69,6 +104,7 @@ table td{
 }
 
 .bb{
+	display: flex;
 	text-align: center;
 	margin-top: 70px;
 	margin-bottom: 70px;
@@ -78,8 +114,16 @@ table td{
 	width: 60px;
 	height: 30px;
 	font-size: 20px;
-	color: #ffffff;
 	background-color: #777777;
 	border-radius: 5px;
 	border: none;
+	margin: 0 auto;
 }
+
+.btn-text{
+	color: #ffffff;
+	text-decoration:none;
+}
+
+
+
