@@ -1,0 +1,129 @@
+header{
+    text-align:center;
+   
+  }
+
+p{
+    font-size:20px;
+}
+
+.contents{
+
+    margin-top:70px;
+
+  }
+
+
+input[type="text"]{
+
+    width: 520px;
+        height:30px;
+        border-radius:5px;
+        background-color: #e2e2e2;
+        border:1px solid #e2e2e2
+}
+
+input[type="date"]{
+
+width: 520px;
+    height:30px;
+    border-radius:5px;
+    color:#808080;
+    background-color: #e2e2e2;
+    border:1px solid #e2e2e2;
+  
+}
+
+input[type="time"]{
+
+width: 520px;
+    height:30px;
+    border-radius:5px;
+    color:#808080;
+    background-color:#e2e2e2;
+    border:1px solid #e2e2e2;
+}
+
+.gyou{
+    width:50%;
+    margin:0 auto;
+    display:flex ;
+}
+
+  
+.box{
+    width:520px;
+  height:30px;
+  border-radius:5px;
+  background-color :#e2e2e2;
+  margin-left:auto;
+  margin-top:20px;
+
+}
+
+.cp_ipselect select {
+    width: 100%;
+    padding-right: 1em;
+    cursor: pointer;
+    text-indent: 0.01px;
+    text-overflow: ellipsis;
+    border: none;
+    outline: none;
+    background: transparent;
+    background-image: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+    text-align: right;
+    color:#808080;
+   }
+
+
+.b-box{
+    width:520px;
+    height:70px;
+    border-radius:5px;
+    background-color:#e2e2e2;
+    margin-left:auto;
+    margin-top:20px;
+}
+
+.bluemaru{
+    margin-right:30px;
+    color: #4a8bff;
+}
+
+
+  .bb{
+    text-align:center;
+    margin-top:  70px;
+    margin-bottom: 70px;
+
+  }
+
+  .button{ 
+    
+    width:60px;
+    height:30px;
+    font-size:20px;
+    color:#ffffff;
+    background-color:#777777;
+    border-radius:5px;
+    border:none;
+    text-align: center;
+
+  }
+  
+  
+ .btn-text{
+ width: 60px;
+ height: 30px;
+ font-size: 20px;
+ background-color: #777777;
+ border-radius: 5px;
+ border: none;
+ text-align: center;
+ color: #ffffff;
+ text-decoration:none;
+ margin-left: 10px;
+}
