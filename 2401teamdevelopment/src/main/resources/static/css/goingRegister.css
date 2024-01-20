@@ -1,7 +1,7 @@
 header{
     text-align:center;
-   
-  }
+    
+   }
 
 p{
     font-size:20px;
@@ -12,6 +12,38 @@ p{
     margin-top:70px;
 
   }
+  
+	
+input[type="text"]{
+
+    width: 520px;
+        height:30px;
+        border-radius:5px;
+        background-color: #e2e2e2;
+        border:1px solid #e2e2e2
+}
+
+input[type="date"]{
+
+width: 520px;
+    height:30px;
+    border-radius:5px;
+    color:#808080;
+    background-color: #e2e2e2;
+    border:1px solid #e2e2e2;
+  
+}
+
+input[type="time"]{
+
+width: 520px;
+    height:30px;
+    border-radius:5px;
+    color:#808080;
+    background-color:#e2e2e2;
+    border:1px solid #e2e2e2;
+}
+
 
 .gyou{
     width:50%;
@@ -64,34 +96,33 @@ p{
 }
 
 
-  .BB{
-    text-align:center;
-    margin-top:  70px;
-    margin-bottom:  70px;
-
-  }
-
-  .button{ 
-    
-    width:60px;
-    height:30px;
-    font-size:20px;
-    color:#ffffff;
-    background-color:#777777;
-    border-radius:5px;
-    border:none;
-
-  }
-
-　　　　　.a{
-  width:60px;
-  height:30px;
-  font-size:20px;
-  color:#ffffff;
-  background-color:#777777;
-  border-radius:5px;
-  border:none;
-
+ .bb{
+ display: flex;
+ width: 130px;
+ margin:70px auto;
 }
 
+.button{
+ width: 60px;
+ height: 30px;
+ font-size: 20px;
+ color:#ffffff;
+ background-color: #777777;
+ border-radius: 5px;
+ border: none;
+ text-align: center;
+}
+
+.btn-text{
+ width: 60px;
+ height: 30px;
+ font-size: 20px;
+ background-color: #777777;
+ border-radius: 5px;
+ border: none;
+ text-align: center;
+ color: #ffffff;
+ text-decoration:none;
+ margin-left: 10px;
+}
   
