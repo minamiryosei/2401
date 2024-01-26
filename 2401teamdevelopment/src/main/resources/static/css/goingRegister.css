@@ -1,7 +1,6 @@
 header{
     text-align:center;
-    
-   }
+}
 
 p{
     font-size:20px;
@@ -16,7 +15,7 @@ p{
 	
 input[type="text"]{
 
-    width: 520px;
+        width: 520px;
         height:30px;
         border-radius:5px;
         background-color: #e2e2e2;
@@ -31,7 +30,6 @@ width: 520px;
     color:#808080;
     background-color: #e2e2e2;
     border:1px solid #e2e2e2;
-  
 }
 
 input[type="time"]{
@@ -51,8 +49,6 @@ width: 520px;
     display:flex ;
 }
 
-   
-  
 .box{
   width:520px;
   height:30px;
@@ -118,7 +114,7 @@ textarea{
  text-align: center;
 }
 
-.btn-text{
+ .btn-text{
  width: 60px;
  height: 30px;
  font-size: 20px;
@@ -130,4 +126,4 @@ textarea{
  text-decoration:none;
  margin-left: 10px;
 }
-  
+}
