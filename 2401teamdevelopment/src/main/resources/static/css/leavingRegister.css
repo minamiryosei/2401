@@ -113,7 +113,17 @@ width: 520px;
     text-align: center;
 
   }
-  
+ 
+  .textarea{
+  width: 520px;
+    height: 60px;
+    background-color: rgb(226, 226, 226);
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(226, 226, 226);
+    border-image: initial;
+  }
   
  .btn-text{
  width: 60px;
