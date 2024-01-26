@@ -54,7 +54,7 @@ width: 520px;
    
   
 .box{
-    width:520px;
+  width:520px;
   height:30px;
   border-radius:5px;
   background-color :#e2e2e2;
@@ -75,9 +75,8 @@ width: 520px;
     box-shadow: none;
     -webkit-appearance: none;
     appearance: none;
-    text-align:left;
-    color:#808080;
-   }
+    }
+
 
 .b-box{
     width:520px;
