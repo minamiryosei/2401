@@ -75,7 +75,10 @@ width: 520px;
     box-shadow: none;
     -webkit-appearance: none;
     appearance: none;
-    }
+    text-align: left;
+    color:#808080;
+   }
+
 
 .b-box{
     width:520px;
@@ -99,11 +102,10 @@ textarea{
         border:1px solid #e2e2e2
 	}
 
- .bb{
- display: flex;
- width: 130px;
- margin:70px auto;
-}
+  .bb{
+    text-align:center;
+    margin-top:  70px;
+    margin-bottom: 70px;
 
 .button{
  width: 60px;
