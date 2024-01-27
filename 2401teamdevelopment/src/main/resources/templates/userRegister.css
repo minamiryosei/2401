@@ -52,3 +52,13 @@ p{
     border-radius: 5px;
     border: none;
 }
+
+input[type="text"]{
+    /*テキストボックスの見た目を変更*/
+ width: 520px;
+ height: 30px;
+ border-radius: 5px;
+ background-color: #e2e2e2; /*背景色を変更*/
+ border: 1px solid #e2e2e2; /*枠線の色を変更*/
+ margin-left: auto;
+ }
