@@ -5,8 +5,11 @@ header{
 p{
     font-size: 20px;
     white-space: nowrap;
-    /*「メールアドレス」がそのままだと文字数が多く、
-    折り返されてしまうので、これを入れて改行させない*/
+    /*「メールアドレス」がそのままだと文字数が多く
+    折り返されてしまうので改行させない*/
+    display: inline-block;
+    width: 20px;
+    vertical-align: top;
 }
 
 .contents{
@@ -30,9 +33,11 @@ p{
     height: 30px;
     border-radius: 5px;
     background-color: #e2e2e2;
-    margin-left: auto;
+    margin-left: 150px;
     margin-top: 20px;
-    /*着手段階で、実装イメージのためのハリボテとしてurboxを実装した。その残骸*/
+    display: inline-block;
+    width: 10px;
+    vertical-align: top;
 }
 
 .ueb{
