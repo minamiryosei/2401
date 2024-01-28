@@ -18,25 +18,15 @@ public class goingRegisterEntity{
 	@Column(name="Attendance_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer user_id;
-	
+
 	@Column(name="status")
 	private String status;
-	
-	
-	@Column(name="goingday")
-	private String goingday;
-	
-	
-	@Column(name="goingtime")
-	private String goingtime;
+
+
+	@Column(name="going_date")
+	private String going_date;
+
+
+	@Column(name="going_time")
+	private String going_time;
 }
-	
-	
-
-
-
-
-
-
-
-
