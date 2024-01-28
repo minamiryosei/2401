@@ -31,7 +31,6 @@ width: 520px;
     color:#808080;
     background-color: #e2e2e2;
     border:1px solid #e2e2e2;
-  
 }
 
 input[type="time"]{
@@ -124,7 +123,24 @@ width: 520px;
     border-color: rgb(226, 226, 226);
     border-image: initial;
   }
-  
+
+.cp_ipselect select02{
+    width: 100%;
+    padding-right: 1em;
+    cursor: pointer;
+    text-indent: 0.01px;
+    text-overflow: ellipsis;
+    border: none;
+    outline: none;
+    background: transparent;
+    background-image: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+    text-align: right;
+    color:#808080;
+   }
+ 
  .btn-text{
  width: 60px;
  height: 30px;
