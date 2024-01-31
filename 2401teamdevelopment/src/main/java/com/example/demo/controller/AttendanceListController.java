@@ -31,7 +31,7 @@ public class AttendanceListController {
   public String attendanceList(Model model) {
     List<AttendanceListEntity> attendancelist = attendanceListService.searchAll();
     model.addAttribute("attendancelist", attendancelist);
-    return "attendancelist/list";
+    return "attendanceList/list";
   }
 
  

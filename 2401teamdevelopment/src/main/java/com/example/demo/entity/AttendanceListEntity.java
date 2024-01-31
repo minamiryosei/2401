@@ -29,9 +29,8 @@ public class  AttendanceListEntity implements Serializable {
   /**
    * ユーザーID
    */
-  @Id
+  
   @Column(name = "user_id")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long user_id;
   /**
    * ステータス
