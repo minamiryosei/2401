@@ -6,13 +6,15 @@
 	<meta name="viewport" contents="width=device-width,initial-scale=1.0">
 	<title>出勤登録</title>
 	<link rel="stylesheet" href="../static/css/goingRegister.css">
-	<link href="/css/goingRegister.css" th:href="@{/css/goingRegister.css}" rel="stylesheet"></link>
+	<link th:href="@{/css/goingRegister.css}" rel="stylesheet">
+	</link>
 </head>
 
 <body>
 	<div>
 		<header>
-			<img src="../static/images/stb.png" width="1400px" height="150px">
+			<img src ="../static/images/stb.png" width="1400px" height="150px">
+			<link th:href="@{../static/images/stb.png}" rel="stylesheet"></link>
 		</header>
 	</div>
 	<form th:action="@{/goingRegister/create}" th:object="${goingRegisterRequest}" th:method="post">
