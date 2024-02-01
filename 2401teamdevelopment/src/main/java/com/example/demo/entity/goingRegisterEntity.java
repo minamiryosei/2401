@@ -11,14 +11,18 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="goingRegister_table")
+@Table(name="attendance_tb")
 public class goingRegisterEntity{
 
 	@Id
-	@Column(name="Attendance_id")
+	@Column(name="attendance_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer attendance_id;
+
+	@Column(name="user_id")
 	private Integer user_id;
 
+	
 	@Column(name="status")
 	private String status;
 

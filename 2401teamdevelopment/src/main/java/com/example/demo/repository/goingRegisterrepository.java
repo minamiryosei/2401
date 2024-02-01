@@ -1,11 +1,11 @@
 package com.example.demo.repository;
 
-public class goingRegisterrepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-<<<<<<< Updated upstream
-=======
+import com.example.demo.entity.goingRegisterEntity;
+
 @Repository
-public interface  goingRegisterrepository extends Jpa repository< goingRegisterEntity>
+public interface goingRegisterrepository extends JpaRepository<goingRegisterEntity,Integer>{}
 	
->>>>>>> Stashed changes
-}
+

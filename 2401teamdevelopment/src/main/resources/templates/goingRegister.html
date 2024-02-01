@@ -1,77 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title>出勤登録</title>
-  <link rel="stylesheet" href="../static/css/goingRegister.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" contents="width=device-width,initial-scale=1.0">
+	<title>出勤登録</title>
+	<link rel="stylesheet" href="../static/css/goingRegister.css">
 </head>
 
-<div>
+<body>
+	<div>
+		<header>
+			<img src="../static/images/stb.png" width="1400px" height="150px">
+		</header>
+	</div>
+	<form th:action="@{/goingRegister/create}" th:object="${goingRegisterRequest}" th:method="post">
 
- <header>
-        <img src="../static/images/stb.png" width="1400px" height="150px">
-    </header>　<div class="contents">
-    </div>　 <div class="gyou">
-        <p class="pinkmaru">⚫︎</p>
-        <p>勤怠ID</p>
-        <div class="box">
-        <div class="com">
-        <input type="text"placeholder="勤怠IDは自動で採番します" readonly> 
-        </div>
-        </div>
-    </div>
-    <div class="gyou">
-        <p class="pinkmaru">⚫︎</p>
-        <p>ユーザーID</p>
-        <div class="box">
-		 <input type="text" >
+		<div class="gyou">
+			<p class="pinkmaru">⚫︎</p>
+			<p>勤怠ID</p>
+			<div class="box">
+				<div class="com">
+					<input type="text" placeholder="勤怠IDは自動で採番します" readonly>
+				</div>
+			</div>
 		</div>
-    </div>
- <div class="gyou"> <p class="pinkmaru">⚫︎</p>
-        <p>ステータス</p>
-        <div class="box">
-        <div class="cp_ipselect cp_sl01"> <select required>
-                <option value="" hidden>▼</option> 
-                 <option value="1">出勤</option>
-                 <option value="2">遅刻</option>
-                 <option value="3">欠席</option>
-                 <option value="4">代休</option>
-                 <option value="5">所定日</option>
-                 <option value="6">有休</option>
-                 <option value="7">その他</option>
-                </select>
-            </div>
-        </div>
-    </div>
-     <div class="gyou">
-        <p class="pinkmaru">⚫︎</p>
-        <p>出勤日</p>
-        <div class="box">
-        <div class="date">
-         <input type="date" id="start" name="trip-start" value="date"/>
-        </div>   
-        </div>
-    </div>
-<div class="gyou">
-        <p class="pinkmaru">⚫︎</p>
-        <p>出勤時間</p>
-        <div class="box">
-        <div class="time">
-        <input type="time" value="09:00" id="appt" name="appt" min="09:00" max="18:00" required />
-    </div>
-    </div>
-    </div>
- <div class="gyou">
-        <p class="pinkmaru">⚫︎</p>
-        <p>備考</p>
-        <div class="b-box">
-		<textarea id="t_message" name="message"></textarea>
-</div>
-    </div>
- <div class="bb">
-   <a th:href="" class="button">登録</a>
-   <a href="attendanceList.html" class="btn-text">戻る</a>
-  </div>
-  </div>
-  </body>
+		<div class="gyou">
+			<p class="pinkmaru">⚫︎</p>
+			<p>ユーザーID</p>
+			<div class="box">
+				<input type="text" th:field="*{user_id}">
+			</div>
+		</div>
+		<div class="gyou">
+			<p class="pinkmaru">⚫︎</p>
+			<p>ステータス</p>
+			<div class="box">
+				<div class="cp_ipselect cp_sl01">
+					<select required th:field="*{status}">
+						<option value="" hidden>▼</option>
+						<option value="1">出勤</option>
+						<option value="2">遅刻</option>
+						<option value="3">欠席</option>
+						<option value="4">代休</option>
+						<option value="5">所定日</option>
+						<option value="6">有休</option>
+						<option value="7">その他</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="gyou">
+			<p class="pinkmaru">⚫︎</p>
+			<p>出勤日</p>
+			<div class="box">
+				<div class="date">
+					<input type="date" th:field="*{going_date}" id="start" name="trip-start" value="date" />
+				</div>
+			</div>
+		</div>
+		<div class="gyou">
+			<p class="pinkmaru">⚫︎</p>
+			<p>出勤時間</p>
+			<div class="box">
+				<div class="time">
+					<input type="time" th:field="*{going_time}" value="09:00" id="appt" name="appt" min="09:00"
+						max="18:00" required />
+				</div>
+			</div>
+		</div>
+		<div class="gyou">
+			<p class="pinkmaru">⚫︎</p>
+			<p>備考</p>
+			<div class="b-box">
+				<textarea id="t_message" name="message" th:field="*{remarks}"></textarea>
+			</div>
+		</div>
+		<div class="bb">
+			<button type="submit" class="button">登録</button>
+			<button href="attendanceList.html" class="btn-text">戻る</button>
+		</div>
+	</form>
+</body>
+
 </html>

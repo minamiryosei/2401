@@ -1,23 +1,33 @@
 package com.example.demo.request;
 
+import java.awt.TextArea;
+import java.io.Serializable;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 
-@SuppressWarnings("serial")
 @Data
+public class goingRegisterrequest implements Serializable {
 
-public class goingRegisterrequest {
+	@NotNull(message = "ユーザーIDを入力してください")
+	private Integer user_id;
 
-＠Notempty（message=	"ユーザーIDを入力してください")
-private String Attendance_id;
+	@NotNull(message = "ステータスの選択をしてください")
+	private String status;
 
-＠Notempty（message=	"ステータスの選択をしてください"）
-private String Status;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@NotEmpty(message = "出勤日を入力してください")
+	private String going_date;
 
-＠Notempty（message=	"出勤日の選択をしてください”）
-private String goingday;
-	
-＠Notempty（message=	"出勤時間を入力してください”）
-private String goingtime;
+	@DateTimeFormat(pattern = "HH:mm")
+	@NotEmpty(message = "出勤時間を入力してください")
+	private String going_time;
 
+	@Length(min = 100)
+	private TextArea remarks;
 }
-

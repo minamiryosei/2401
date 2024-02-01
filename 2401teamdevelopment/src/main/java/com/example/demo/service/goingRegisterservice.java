@@ -1,29 +1,33 @@
 package com.example.demo.service;
+import java.util.List;
 
-<<<<<<< Updated upstream
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.goingRegisterEntity;
+import com.example.demo.repository.goingRegisterrepository;
+import com.example.demo.request.goingRegisterrequest;
+
+
+@Service
+@Transactional(dontRollbackOn=Exception.class)
 public class goingRegisterservice {
 
-=======
-import antlr.collections.List;
+@Autowired
+	private goingRegisterrepository goingRegisterRepository;
 
-＠Service
-＠Transactional（dontRollbackOn=Exception.class)
-public class goingRegisterservice {
-
-	@Autowired
-	private goingRegisterRepository goingRegisterRepository;
-
-	public List<goingRegisterEntity>searchAll(){
+	public List<goingRegisterEntity> earchAll(){
 		return  goingRegisterRepository.findAll();
 	}
 
-	public void create(goingRegisterRequest goingRegisterRequest) {
-		goingRegisterEntity goingRegister=new goingRegisterEntity();
-		goingRegister.set user_id(goingRegisterRequest.getuser_id());
-		goingRegister.set status(goingRegisterRequest.getstatus());
-		goingRegister.set goingday(goingRegisterRequest.getgoingday());
-		goingRegister.set goingtime(goingRegisterRequest.getgoingtime());
-		goingRegisterRepository.save(userRegistration);
+	public void create(goingRegisterrequest goingRegisterRequest) {
+		goingRegisterEntity goingRegister = new goingRegisterEntity();
+		goingRegister.setUser_id(goingRegisterRequest.getUser_id());
+		goingRegister.setStatus(goingRegisterRequest.getStatus());
+		goingRegister.setGoing_date(goingRegisterRequest.getGoing_date());
+		goingRegister.setGoing_time(goingRegisterRequest.getGoing_time());
+		goingRegisterRepository.save(goingRegister);
 	}
->>>>>>> Stashed changes
 }
