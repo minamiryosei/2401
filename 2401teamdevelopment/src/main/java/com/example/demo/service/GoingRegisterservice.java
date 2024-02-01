@@ -6,24 +6,24 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.entity.goingRegisterEntity;
-import com.example.demo.repository.goingRegisterrepository;
-import com.example.demo.request.goingRegisterrequest;
+import com.example.demo.entity.GoingRegisterEntity;
+import com.example.demo.repository.GoingRegisterrepository;
+import com.example.demo.request.GoingRegisterrequest;
 
 
 @Service
 @Transactional(dontRollbackOn=Exception.class)
-public class goingRegisterservice {
+public class GoingRegisterservice {
 
 @Autowired
-	private goingRegisterrepository goingRegisterRepository;
+	private GoingRegisterrepository goingRegisterRepository;
 
-	public List<goingRegisterEntity> earchAll(){
+	public List<GoingRegisterEntity> earchAll(){
 		return  goingRegisterRepository.findAll();
 	}
 
-	public void create(goingRegisterrequest goingRegisterRequest) {
-		goingRegisterEntity goingRegister = new goingRegisterEntity();
+	public void create(GoingRegisterrequest goingRegisterRequest) {
+		GoingRegisterEntity goingRegister = new GoingRegisterEntity();
 		goingRegister.setUser_id(goingRegisterRequest.getUser_id());
 		goingRegister.setStatus(goingRegisterRequest.getStatus());
 		goingRegister.setGoing_date(goingRegisterRequest.getGoing_date());

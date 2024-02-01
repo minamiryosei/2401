@@ -13,23 +13,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.demo.request.goingRegisterrequest;
-import com.example.demo.service.goingRegisterservice;
+import com.example.demo.request.GoingRegisterrequest;
+import com.example.demo.service.GoingRegisterservice;
 
 @Controller
-public class goingRegisterController {
+public class GoingRegisterController {
 
 	@Autowired
-	private goingRegisterservice goingRegisterService;
+	private GoingRegisterservice goingRegisterService;
 
 	@GetMapping("goingRegister")
 	public String displayAdd (Model model) {
-		model.addAttribute("goingRegisterRequest",new goingRegisterrequest());
+	model.addAttribute("goingRegisterRequest",new GoingRegisterrequest());
 		return"goingRegister";
 	}
 
 	@PostMapping("/goingRegister/create")
-		public String create(@Validated @ModelAttribute goingRegisterrequest goingRegisterRequest,
+		public String create(@Validated @ModelAttribute GoingRegisterrequest goingRegisterRequest,
 			BindingResult result, Model model) {
 
 		if(result.hasErrors()) {
@@ -44,6 +44,4 @@ public class goingRegisterController {
 		goingRegisterService.create(goingRegisterRequest);
 		return"mypage";
 	}
-
-	
 }

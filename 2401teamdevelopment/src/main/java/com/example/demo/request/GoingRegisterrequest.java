@@ -1,6 +1,5 @@
 package com.example.demo.request;
 
-import java.awt.TextArea;
 import java.io.Serializable;
 
 import javax.validation.constraints.NotEmpty;
@@ -12,7 +11,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import lombok.Data;
 
 @Data
-public class goingRegisterrequest implements Serializable {
+public class GoingRegisterrequest implements Serializable {
 
 	@NotNull(message = "ユーザーIDを入力してください")
 	private Integer user_id;
@@ -29,5 +28,5 @@ public class goingRegisterrequest implements Serializable {
 	private String going_time;
 
 	@Length(min = 100)
-	private TextArea remarks;
+	private String remarks;
 }

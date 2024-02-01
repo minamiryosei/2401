@@ -12,7 +12,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name="attendance_tb")
-public class goingRegisterEntity{
+public class GoingRegisterEntity{
 
 	@Id
 	@Column(name="attendance_id")
@@ -33,4 +33,8 @@ public class goingRegisterEntity{
 
 	@Column(name="going_time")
 	private String going_time;
+	
+	
+    @Column(name="remarks")
+	private String remarks;
 }

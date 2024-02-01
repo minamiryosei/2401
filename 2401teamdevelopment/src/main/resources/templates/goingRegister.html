@@ -13,8 +13,7 @@
 <body>
 	<div>
 		<header>
-			<img src ="../static/images/stb.png" width="1400px" height="150px">
-			<link th:href="@{../static/images/stb.png}" rel="stylesheet"></link>
+		<img src="images/stb.png" th:src="@{/images/stb.png}" width="1400px" height="150px">
 		</header>
 	</div>
 	<form th:action="@{/goingRegister/create}" th:object="${goingRegisterRequest}" th:method="post">
@@ -32,7 +31,7 @@
 			<p class="pinkmaru">⚫︎</p>
 			<p>ユーザーID</p>
 			<div class="box">
-				<input type="text" th:field="*{user_id}">
+			<input type="text" th:field="*{user_id}">
 			</div>
 		</div>
 		<div class="gyou">

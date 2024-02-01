@@ -3,9 +3,9 @@ package com.example.demo.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.entity.goingRegisterEntity;
+import com.example.demo.entity.GoingRegisterEntity;
 
 @Repository
-public interface goingRegisterrepository extends JpaRepository<goingRegisterEntity,Integer>{}
+public interface GoingRegisterrepository extends JpaRepository<GoingRegisterEntity,Integer>{}
 	
 
