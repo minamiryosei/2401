@@ -23,13 +23,13 @@ import com.example.demo.service.UserService;
  * ユーザー情報 Controller
  */
 @Controller
-public class userRegisterController {
+public class UserController {
 
   /**
    * ユーザー情報 Service
    */
   @Autowired
-  private userRegisterService userService;
+  private UserService userService;
 
   /**
    * ユーザー情報一覧画面を表示

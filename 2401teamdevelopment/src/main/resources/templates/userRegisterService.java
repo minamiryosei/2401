@@ -21,7 +21,7 @@ public class UserService {
    * ユーザー情報 Repository
    */
   @Autowired
-  private userRegisterRepository userRepository;
+  private UserRepository userRepository;
 
   /**
    * ユーザー情報 全検索
