@@ -27,11 +27,11 @@ public class AttendanceListController {
    * @param model Model
    * @return 勤怠一覧画面のHTML
    */
-  @RequestMapping("/attendanceList/list")
+  @RequestMapping("attendanceList")
   public String attendanceList(Model model) {
     List<AttendanceListEntity> attendancelist = attendanceListService.searchAll();
-    model.addAttribute("attendancelist", attendancelist);
-    return "attendanceList/list";
+    model.addAttribute("attendanceList", attendancelist);
+    return "attendanceList";
   }
 
  
