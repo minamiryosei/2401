@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,30 +13,26 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="attendance_tb")
-public class GoingRegisterEntity{
+@Table(name = "attendance_tb")
+public class GoingRegisterEntity {
 
 	@Id
-	@Column(name="attendance_id")
+	@Column(name = "attendance_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer attendance_id;
 
-	@Column(name="user_id")
+	@Column(name = "user_id")
 	private Integer user_id;
 
-	
-	@Column(name="status")
+	@Column(name = "status")
 	private String status;
 
+	@Column(name = "going_date")
+	private Date going_date;
 
-	@Column(name="going_date")
-	private String going_date;
-
-
-	@Column(name="going_time")
+	@Column(name = "going_time")
 	private String going_time;
-	
-	
-    @Column(name="remarks")
+
+	@Column(name = "remarks")
 	private String remarks;
 }

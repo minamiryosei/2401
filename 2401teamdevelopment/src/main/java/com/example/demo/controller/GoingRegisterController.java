@@ -23,25 +23,25 @@ public class GoingRegisterController {
 	private GoingRegisterservice goingRegisterService;
 
 	@GetMapping("goingRegister")
-	public String displayAdd (Model model) {
-	model.addAttribute("goingRegisterRequest",new GoingRegisterrequest());
-		return"goingRegister";
+	public String displayAdd(Model model) {
+		model.addAttribute("goingRegisterRequest", new GoingRegisterrequest());
+		return "goingRegister";
 	}
 
 	@PostMapping("/goingRegister/create")
-		public String create(@Validated @ModelAttribute GoingRegisterrequest goingRegisterRequest,
+	public String create(@Validated @ModelAttribute GoingRegisterrequest goingRegisterRequest,
 			BindingResult result, Model model) {
 
-		if(result.hasErrors()) {
-			List<String> errorList=new ArrayList<String>();
-			for (ObjectError error:result.getAllErrors()) {
-				errorList.add(error.getDefaultMessage());	
+		if (result.hasErrors()) {
+			List<String> errorList = new ArrayList<String>();
+			for (ObjectError error : result.getAllErrors()) {
+				errorList.add(error.getDefaultMessage());
 			}
-			model.addAttribute("ValidationError",errorList);
+			model.addAttribute("ValidationError", errorList);
 			return "goingRegister";
 		}
-		
+
 		goingRegisterService.create(goingRegisterRequest);
-		return"mypage";
+		return "GoingRegister.html";
 	}
 }

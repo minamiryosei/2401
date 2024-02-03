@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" contents="width=device-width,initial-scale=1.0">
@@ -9,7 +8,6 @@
 	<link th:href="@{/css/goingRegister.css}" rel="stylesheet">
 	</link>
 </head>
-
 <body>
 	<div>
 		<header>
@@ -17,7 +15,6 @@
 		</header>
 	</div>
 	<form th:action="@{/goingRegister/create}" th:object="${goingRegisterRequest}" th:method="post">
-
 		<div class="gyou">
 			<p class="pinkmaru">⚫︎</p>
 			<p>勤怠ID</p>
@@ -41,13 +38,13 @@
 				<div class="cp_ipselect cp_sl01">
 					<select required th:field="*{status}">
 						<option value="" hidden>▼</option>
-						<option value="1">出勤</option>
-						<option value="2">遅刻</option>
-						<option value="3">欠席</option>
-						<option value="4">代休</option>
-						<option value="5">所定日</option>
-						<option value="6">有休</option>
-						<option value="7">その他</option>
+						<option value="出勤">出勤</option>
+						<option value="遅刻">遅刻</option>
+						<option value="欠席">欠席</option>
+						<option value="代休">代休</option>
+						<option value="所定日">所定日</option>
+						<option value="有休">有休</option>
+						<option value="その他">その他</option>
 					</select>
 				</div>
 			</div>
@@ -84,5 +81,4 @@
 		</div>
 	</form>
 </body>
-
 </html>
