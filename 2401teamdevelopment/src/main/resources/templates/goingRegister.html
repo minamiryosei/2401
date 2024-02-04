@@ -10,6 +10,8 @@
 </head>
 <body>
 	<div>
+		 <div th:if="${validationError}" th:each="error : ${validationError}">
+		<label class="text-danger" th:text="${error}"></label>
 		<header>
 		<img src="images/stb.png" th:src="@{/images/stb.png}" width="1400px" height="150px">
 		</header>
@@ -20,6 +22,7 @@
 			<p>勤怠ID</p>
 			<div class="box">
 				<div class="com">
+					 <label>勤怠ID:<span class="text-danger">※</span></label>
 					<input type="text" placeholder="勤怠IDは自動で採番します" readonly>
 				</div>
 			</div>
@@ -28,6 +31,7 @@
 			<p class="pinkmaru">⚫︎</p>
 			<p>ユーザーID</p>
 			<div class="box">
+			<label>ユーザーID:<span class="text-danger">※</span></label>
 			<input type="text" th:field="*{user_id}">
 			</div>
 		</div>
@@ -36,6 +40,7 @@
 			<p>ステータス</p>
 			<div class="box">
 				<div class="cp_ipselect cp_sl01">
+					<label>ステータス:<span class="text-danger">※</span></label>
 					<select required th:field="*{status}">
 						<option value="" hidden>▼</option>
 						<option value="出勤">出勤</option>
@@ -63,6 +68,7 @@
 			<p>出勤時間</p>
 			<div class="box">
 				<div class="time">
+					<label>出勤時間:<span class="text-danger">※</span></label>
 					<input type="time" th:field="*{going_time}" value="09:00" id="appt" name="appt" min="09:00"
 						max="18:00" required />
 				</div>

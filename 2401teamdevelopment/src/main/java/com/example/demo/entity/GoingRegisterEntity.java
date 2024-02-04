@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
-import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,10 +29,10 @@ public class GoingRegisterEntity {
 	private String status;
 
 	@Column(name = "going_date")
-	private Date going_date;
+	private LocalDate going_date;
 
 	@Column(name = "going_time")
-	private String going_time;
+	private LocalTime going_time;
 
 	@Column(name = "remarks")
 	private String remarks;

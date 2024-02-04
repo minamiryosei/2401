@@ -1,6 +1,8 @@
 package com.example.demo.request;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -21,11 +23,11 @@ public class GoingRegisterrequest implements Serializable {
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotEmpty(message = "出勤日を入力してください")
-	private String going_date;
+	private LocalDate going_date;
 
 	@DateTimeFormat(pattern = "HH:mm")
 	@NotEmpty(message = "出勤時間を入力してください")
-	private String going_time;
+	private LocalTime going_time;
 
 	@Length(max = 100)
 	private String remarks;
