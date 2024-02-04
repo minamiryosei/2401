@@ -32,12 +32,12 @@
 		          <td th:text="*{attendance_id}" class="ki-td"></td>
 		          <td th:text="*{user_id}" class="ki-td"></td>
 		          <td th:text="*{status}" class="ki-td"></td>
-		          <td th:text="*{going_date}" class="ki-td"></td>
-		          <td th:text="*{going_time}" class="ki-td"></td>
-		          <td th:text="*{leaving_date}" class="ki-td"></td>
-		          <td th:text="*{leaving_time}" class="ki-td"></td>
-		          <td th:text="*{working_time}" class="ki-td"></td>
-		          <td th:text="*{break_time}" class="ki-td"></td>
+		          <td th:text="${#dates.format(attendanceList.going_date, 'yyyy/MM/dd')}" class="ki-td"></td>
+		          <td th:text="${#dates.format(attendanceList.going_time, 'HH:mm')}" class="ki-td"></td>
+		          <td th:text="${#dates.format(attendanceList.leaving_date, 'yyyy/MM/dd')}" class="ki-td"></td>
+		          <td th:text="${#dates.format(attendanceList.leaving_time, 'HH:mm')}" class="ki-td"></td>
+		          <td th:text="${#dates.format(attendanceList.working_time, 'HH:mm')}" class="ki-td"></td>
+		          <td th:text="${#dates.format(attendanceList.break_time, 'HH:mm')}" class="ki-td"></td>
 		          <td th:text="*{edit_reason}" class="ki-td"></td>
 		          <td th:text="*{remarks}" class="ki-td"></td>
 		          <td class="b"><div class="button"><a href="attendanceEdit.html" class="btn-text">編集</a></div></td>

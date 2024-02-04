@@ -19,6 +19,9 @@ import lombok.Data;
 @Data
 @Table(name = "attendance_tb",schema = "public")
 public class  AttendanceListEntity implements Serializable {
+	
+	
+	
   /**
    * 勤怠ID
    */
@@ -61,12 +64,12 @@ public class  AttendanceListEntity implements Serializable {
    * 稼働時間
    */
   @Column(name = "working_time")
-  private String working_time;
+  private Date working_time;
   /**
    * 休憩時間
    */
   @Column(name = "break_time")
-  private String break_time;
+  private Date break_time;
   /**
    * 修正理由
    */
