@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.userRegisterService;
 
 import java.util.Date;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.userRegisterController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.example.demo.dto.UserRequest;
-import com.example.demo.entity.User;
-import com.example.demo.service.UserService;
+import com.example.demo.userRegisterRequest;
+import com.example.demo.userRegister;
+import com.example.demo.userRegisterService;
 
 /**
  * ユーザー情報 Controller
