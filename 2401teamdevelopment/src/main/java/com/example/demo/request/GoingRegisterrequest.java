@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
@@ -22,11 +21,11 @@ public class GoingRegisterrequest implements Serializable {
 	private String status;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@NotEmpty(message = "出勤日を入力してください")
+	@NotNull(message = "出勤日を入力してください")
 	private LocalDate going_date;
 
 	@DateTimeFormat(pattern = "HH:mm")
-	@NotEmpty(message = "出勤時間を入力してください")
+	@NotNull(message = "出勤時間を入力してください")
 	private LocalTime going_time;
 
 	@Length(max = 100)
