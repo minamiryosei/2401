@@ -16,12 +16,12 @@ import com.example.demo.repository.UserRepository;
  */
 @Service
 @Transactional(rollbackFor = Exception.class)
-public class UserService {
+public class userRegisterService {
   /**
    * ユーザー情報 Repository
    */
   @Autowired
-  private UserRepository userRepository;
+  private userRegisterService userRepository;
 
   /**
    * ユーザー情報 全検索
@@ -35,7 +35,7 @@ public class UserService {
    * ユーザー情報 新規登録
    * @param user ユーザー情報
    */
-  public void create(UserRequest userRequest) {
+  public void create(userRegisterRequest userRequest) {
     Date now = new Date();
     User user = new User();
     user.setName(userRequest.getName());

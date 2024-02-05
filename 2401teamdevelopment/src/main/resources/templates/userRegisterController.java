@@ -23,13 +23,13 @@ import com.example.demo.service.UserService;
  * ユーザー情報 Controller
  */
 @Controller
-public class UserController {
+public class userRegisterController {
 
   /**
    * ユーザー情報 Service
    */
   @Autowired
-  private UserService userService;
+  private userRegisterController userService;
 
   /**
    * ユーザー情報一覧画面を表示
@@ -61,7 +61,7 @@ public class UserController {
    * @return ユーザー情報一覧画面
    */
   @RequestMapping(value = "/user/create", method = RequestMethod.POST)
-  public String create(@Validated @ModelAttribute UserRequest userRequest, BindingResult result, Model model) {
+  public String create(@Validated @ModelAttribute userRegisterRequest userRequest, BindingResult result, Model model) {
 
     if (result.hasErrors()) {
       // 入力チェックエラーの場合

@@ -12,29 +12,28 @@ import lombok.Data;
  * ユーザー情報 リクエストデータ
  */
 @Data
-public class UserRequest implements Serializable {
+public class userRegisterRequest implements Serializable {
   /**
    * 名前
    */
   @NotEmpty(message = "名前を入力してください")
-  @Size(max = 100, message = "名前は100桁以内で入力してください")
   private String name;
   /**
    * 住所
    */
   @NotEmpty(message = "フリガナを入力してください")
-  @Size(max = 100, message = "全角カタカナで入力してください")
-  private String name;
+  @Pattern(regexp = "^[ァ-ヶー]*$", message = "全角カタカナで入力してください")
+  private String furigana;
   /**
    * 住所
    */
   @NotEmpty(message = "メールアドレスを入力してください")
-  @Size(max = 100, message = "全角カタカナで入力してください")
-  private String name;
+  @Email(message = "メールアドレスの形式に入力してください。")
+  private String mail;
   /**
    * 住所
    */
   @NotEmpty(message = "パスワードを入力してください")
   @Size(min = 8, message = "パスワードは8桁以上で入力してください")
-  private String name;
+  private String password;
 }
