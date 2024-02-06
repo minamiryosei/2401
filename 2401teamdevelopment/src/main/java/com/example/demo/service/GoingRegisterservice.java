@@ -28,6 +28,7 @@ public class GoingRegisterservice {
 		goingRegister.setStatus(goingRegisterRequest.getStatus());
 		goingRegister.setGoing_date(goingRegisterRequest.getGoing_date());
 		goingRegister.setGoing_time(goingRegisterRequest.getGoing_time());
+		goingRegister.setRemarks(goingRegisterRequest.getRemarks());
 		goingRegisterRepository.save(goingRegister);
 	}
 }
