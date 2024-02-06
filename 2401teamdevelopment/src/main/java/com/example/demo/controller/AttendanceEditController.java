@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.demo.entity.AttendanceEditEntity;
+
 /**
  * ユーザー情報 Controller
  */
@@ -21,21 +23,28 @@ public class AttendanceEditController {
 
 
 /**
+ * 
+〜〜〜〜〜〜〜
+上記は省略
+〜〜〜〜〜〜〜
+ */
+
+/**
  * ユーザー編集画面を表示
  * @param id 表示するユーザーID
  * @param model Model
  * @return ユーザー編集画面
  */
-@GetMapping("/user/{id}/edit")
-public String userEdit(@PathVariable Integer id, Model model) {
-  UserEntity user = userService.findById(id);
-  UserUpdateRequest userUpdateRequest = new UserUpdateRequest();
-  userUpdateRequest.setId(user.getId());
-  userUpdateRequest.setName(user.getName());
-  userUpdateRequest.setPhone(user.getPhone());
-  userUpdateRequest.setAddress(user.getAddress());
-  model.addAttribute("userUpdateRequest", userUpdateRequest);
-  return "user/edit";
+@GetMapping("/attendanceEdit/{id}/edit")
+public String attendanceEditEdit(@PathVariable Integer id, Model model) {
+  AttendanceEditEntity attendanceEdit = attendanceEditService.findById(id);
+  AttendanceEditRequest attendanceEditUpdateRequest = new AttendanceEditRequest();
+  attendanceEditUpdateRequest.setAttendance_id(attendanceEdit.getAttendance_id());
+  attendanceEditUpdateRequest.setName(attendanceEdit.getName());
+  attendanceEditUpdateRequest.setPhone(attendanceEdit.getPhone());
+  attendanceEditUpdateRequest.setAddress(attendanceEdit.getAddress());
+  model.addAttribute("attendanceEditUpdateRequest", attendanceEditUpdateRequest);
+  return "attendanceEdit/edit";
 }
 /**
  * ユーザー更新
@@ -43,18 +52,18 @@ public String userEdit(@PathVariable Integer id, Model model) {
  * @param model Model
  * @return ユーザー情報詳細画面
  */
-@RequestMapping("/user/update")
-public String userUpdate(@Validated @ModelAttribute UserUpdateRequest userUpdateRequest, BindingResult result, Model model) {
+@RequestMapping("/attendanceEdit/update")
+public String attendanceEditUpdate(@Validated @ModelAttribute AttendanceEditRequest attendanceEditUpdateRequest, BindingResult result, Model model) {
   if (result.hasErrors()) {
     List<String> errorList = new ArrayList<String>();
     for (ObjectError error : result.getAllErrors()) {
       errorList.add(error.getDefaultMessage());
     }
     model.addAttribute("validationError", errorList);
-    return "user/edit";
+    return "attendanceEdit/edit";
   }
   // ユーザー情報の更新
-  userService.update(userUpdateRequest);
-  return String.format("redirect:/user/%d", userUpdateRequest.getId());
+  attendanceEditService.update(attendanceEditUpdateRequest);
+  return String.format("redirect:/user/%d", attendanceEditUpdateRequest.getId());
 }
 }

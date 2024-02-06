@@ -1,5 +1,23 @@
+
 package com.example.demo.dto;
 
-public class AttendanceEditUpdateRequest {
+import java.io.Serializable;
 
+import javax.validation.constraints.NotNull;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+/**
+ * ユーザー情報更新リクエストデータ
+ *
+ */
+@Data
+@EqualsAndHashCode(callSuper=false)
+public class AttendanceEditUpdateRequest extends AttendanceEditRequest implements Serializable {
+
+  /**
+   * ユーザーID
+   */
+  @NotNull
+  private Integer getAttendance_id;
 }
