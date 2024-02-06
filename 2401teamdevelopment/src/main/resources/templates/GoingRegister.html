@@ -12,6 +12,7 @@
  <div>
 	 <div th:if="${validationError}" th:each="error : ${validationError}">
 	 <label class="text-danger" th:text="${error}"></label>
+ </div>
   <header>
   <img src="images/stb.png" th:src="@{/images/stb.png}" width="1400px" height="150px">
   </header>
@@ -26,7 +27,6 @@
    </div>
   </div>
   <div class="gyou">
-   <span class="text-danger">ユーザIDを入力してください</span>
    <p class="pinkmaru">⚫</p>
    <p>ユーザーID</p>
    <div class="box">
@@ -34,7 +34,6 @@
    </div>
   </div>
   <div class="gyou">
-	<span class="text-danger">ステータスを選択してください</span>
    <p class="pinkmaru">⚫</p>
    <p>ステータス</p>
    <div class="box">
@@ -53,7 +52,6 @@
    </div>
   </div>
   <div class="gyou">
-  <span class="text-danger">出勤日を入力してください</span>
    <p class="pinkmaru">⚫</p>
    <p>出勤日</p>
    <div class="box">
@@ -63,7 +61,6 @@
    </div>
   </div>
   <div class="gyou">
-	 <span class="text-danger">出勤時間を入力してください</span>
    <p class="pinkmaru">⚫</p>
    <p>出勤時間</p>
    <div class="box">
