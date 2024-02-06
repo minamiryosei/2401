@@ -17,7 +17,7 @@ public class userRegisterService {
    * ユーザー情報 Repository
    */
   @Autowired
-  private userRegisterService userRepository;
+  private userRegisterRepository userRepository;
 
   /**
    * ユーザー情報 全検索
@@ -31,14 +31,14 @@ public class userRegisterService {
    * ユーザー情報 新規登録
    * @param user ユーザー情報
    */
-  public void create(userRegisterRequest userRequest) {
+  public void create(userRegister userRequest) {
     Date now = new Date();
     userRegister user = new userRegister();
     user.setName(userRequest.getName());
     user.setFurigana(userRequest.getFurigana());
-    user.setPhone(userRequest.getPhone());
+    user.setMail(userRequest.getMail());
     user.setCreateDate(now);
     user.setUpdateDate(now);
-    userRepository.save(user);
+    userRegisterRepository.save(user);
   }
 }

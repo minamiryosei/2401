@@ -25,7 +25,7 @@ public class userRegisterController {
    * ユーザー情報 Service
    */
   @Autowired
-  private userRegisterController userService;
+  private userRegisterService userService;
 
   /**
    * ユーザー情報一覧画面を表示
