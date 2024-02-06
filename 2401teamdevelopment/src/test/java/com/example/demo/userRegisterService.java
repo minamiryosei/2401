@@ -1,4 +1,4 @@
-package com.example.demo.userRegisterService;
+package com.example.demo;
 
 import java.util.Date;
 import java.util.List;
@@ -6,10 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.example.demo.dto.UserRequest;
-import com.example.demo.entity.User;
-import com.example.demo.repository.UserRepository;
 
 /**
  * ユーザー情報 Service
@@ -27,7 +23,7 @@ public class userRegisterService {
    * ユーザー情報 全検索
    * @return 検索結果
    */
-  public List<User> searchAll() {
+  public List<userRegister> searchAll() {
     return userRepository.findAll();
   }
 
@@ -37,9 +33,9 @@ public class userRegisterService {
    */
   public void create(userRegisterRequest userRequest) {
     Date now = new Date();
-    User user = new User();
+    userRegister user = new userRegister();
     user.setName(userRequest.getName());
-    user.setAddress(userRequest.getAddress());
+    user.setFurigana(userRequest.getFurigana());
     user.setPhone(userRequest.getPhone());
     user.setCreateDate(now);
     user.setUpdateDate(now);

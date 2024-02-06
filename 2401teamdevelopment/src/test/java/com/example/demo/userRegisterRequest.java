@@ -1,4 +1,4 @@
-package com.example.demo.userRegisterRequest;
+package com.example.demo;
 
 import java.io.Serializable;
 

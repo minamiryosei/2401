@@ -1,4 +1,4 @@
-package com.example.demo.userRegisterController;
+package com.example.demo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +14,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.example.demo.userRegisterRequest;
-import com.example.demo.userRegister;
-import com.example.demo.userRegisterService;
 
 /**
  * ユーザー情報 Controller
@@ -38,7 +34,7 @@ public class userRegisterController {
    */
   @GetMapping(value = "/user/list")
   public String displayList(Model model) {
-    List<User> userlist = userService.searchAll();
+    List<userRegister> userlist = userService.searchAll();
     model.addAttribute("userlist", userlist);
     return "user/list";
   }
@@ -50,7 +46,7 @@ public class userRegisterController {
    */
   @GetMapping(value = "/user/add")
   public String displayAdd(Model model) {
-    model.addAttribute("userRequest", new UserRequest());
+    model.addAttribute("userRequest", new userRegisterRequest());
     return "user/add";
   }
 
