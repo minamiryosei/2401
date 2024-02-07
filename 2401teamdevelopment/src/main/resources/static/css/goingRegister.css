@@ -11,6 +11,11 @@ p {
 
 }
 
+.text-danger{
+	
+	color:red;
+	
+}
 
 input[type="text"] {
 

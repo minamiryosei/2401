@@ -24,8 +24,8 @@ public class GoingRegisterController {
 
 	@GetMapping("goingRegister")
 	public String displayAdd(Model model) {
-		model.addAttribute("goingRegisterRequest", new GoingRegisterrequest());
-		return "goingRegister";
+		model.addAttribute("goingRegisterrequest", new GoingRegisterrequest());
+		return "GoingRegister";
 	}
 
 	@PostMapping("/goingRegister/create")
@@ -38,10 +38,10 @@ public class GoingRegisterController {
 				errorList.add(error.getDefaultMessage());
 			}
 			model.addAttribute("ValidationError", errorList);
-			return "goingRegister";
+			return "GoingRegister";
 		}
 
 		goingRegisterService.create(goingRegisterRequest);
-		return "sample";
+		return "Sample";
 	}
 }
