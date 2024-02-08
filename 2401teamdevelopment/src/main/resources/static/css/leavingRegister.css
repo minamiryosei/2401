@@ -1,6 +1,5 @@
 header{
     text-align:center;
-   
   }
 
 p{
@@ -12,7 +11,10 @@ p{
     margin-top:70px;
 
   }
+text-danger{
 
+ color:red;
+}
 
 input[type="text"]{
 

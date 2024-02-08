@@ -1,90 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" contents="width=device-width,initial-scale=1.0">
 	<title>退勤登録</title>
 	<link rel="stylesheet" href="../static/css/leavingRegister.css">
+	<link th:href="@{/css/leavingRegister.css}" rel="stylesheet">
+	</link>
 </head>
-<header>
-	<img src="../static/images/ttb.png" 1400px" height="170px">
-</header>
-<div class="contents">
-	<div class="gyou">
-		<p class="bluemaru">⚫</p>
-		<p>勤怠ID</p>
-		<div class="box">
-			<input type="text" placeholder="勤怠IDは自動で採番します" readonly>
-		</div>
+
+<body>
+	<div>
+		<header>
+			<img src="../static/images/ttb.png" 1400px" height="150px">
+		</header>
 	</div>
-	<div class="gyou">
-		<p class="bluemaru">⚫</p>
-		<p>ユーザーID</p>
-		<div class="box">
-			<input type="text">
+	<form th:action="@{/LeavingRegister/create}" th:object="${LeavingRegisterrequest}" th:method="post">
+		<div th:if="${ValidationError}" th:each="error : ${ValidationError}">
+			<label class="text-danger" th:text="${error}"></label>
 		</div>
-	</div>
-	<div class="gyou">
-		<p class="bluemaru">⚫</p>
-		<p>ステータス</p>
-		<div class="box">
-			<div class="cp_ipselect cp_sl01">
-				<select required>
-					<option value="" hidden>▼</option <option value="1">退勤</option>
-					<option value="2">遅刻</option>
-					<option value="3">欠席</option>
-					<option value="4">代休</option>
-					<option value="5">所定日</optio>
-					<option value="6">有休</option>
-					<option value="7">その他</option>
-				</select>
+		<div class="gyou">
+			<p class="bluemaru">⚫</p>
+			<p>勤怠ID</p>
+			<div class="box">
+				<input type="text" placeholder="勤怠IDは自動で採番します" readonly>
 			</div>
 		</div>
-	</div>
-	<div class="gyou">
-		<p class="bluemaru">⚫</p>
-		<p>退勤日</p>
-		<div class="box">
-			<div class="date">
-				<input type="date" id="start" name="trip-start" value="date" />
+		</div>
+		<div class="gyou">
+			<p class="bluemaru">⚫</p>
+			<p>ユーザーID</p>
+			<div class="box">
+				<input type="text">
 			</div>
 		</div>
-	</div>
-	<div class="gyou">
-		<p class="bluemaru">⚫</p>
-		<p>退勤時間</p>
-		<div class="box">
-			<div class="time">
-				<input type="time" value="18:00" id="appt" name="appt" min="09:00" max="18:00" required />
-			</div>
-		</div>
-	</div>
-	<div class="gyou">
-		<p class="bluemaru">⚫</p>
-		<p>休憩時間</p>
-		<div class="box">
-			<div class="cp_ipselect cp_sl02">
-				<select required>
+		<div class="gyou">
+			<p class="bluemaru">⚫</p>
+			<p>ステータス</p>
+			<div class="box">
+				<div class="cp_ipselect cp_sl01">
 					<option value="" hidden>▼</option>
-					<option value="1">15分</option>
-					<option value="2">30分</option>
-					<option value="3">45分</option>
-					<option value="4">60分</option>
-					<option value="5">75分</option>
-					<option value="6">90分</option>
-				</select>
+					<select th:field="*{status}">
+						<option value="" hidden>▼</option>
+						<option value="退勤">退勤</option>
+						<option value="遅刻">遅刻</option>
+						<option value="欠席">欠席</option>
+						<option value="代休">代休</option>
+						<option value="所定日">所定日</optio>
+						<option value="有休">有休</option>
+						<option value="その他">その他</option>
+					</select>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="gyou">
-		<p class="bluemaru">⚫</p>
-		<p>備考</p>
-		<div class="b-box">
-			<textarea id="t_message" name="message"></textarea>
+		<div class="gyou">
+			<p class="bluemaru">⚫</p>
+			<p>退勤日</p>
+			<div class="box">
+				<div class="date">
+					<input type="date" th:field="*{leaving_date}" id="start" name="trip-start" value="date" />
+				</div>
+			</div>
 		</div>
-	</div>
-	<div class="bb">
-		<a th:href="" class="button">登録</a>
-		<a href="attendanceList.html" class="btn-text">戻る</a>
-	</div>
-</div>
+		<div class="gyou">
+			<p class="bluemaru">⚫</p>
+			<p>退勤時間</p>
+			<div class="box">
+				<div class="time">
+					<input type="time" th:field="*{leaving_time}" value="18:00" id="appt" name="appt" min="09:00"
+						max="18:00" />
+				</div>
+			</div>
+		</div>
+		<div class="gyou">
+			<p class="bluemaru">⚫</p>
+			<p>休憩時間</p>
+			<div class="box">
+				<div class="cp_ipselect cp_sl02">
+					        <option value="" hidden>▼</option>
+						    <select th:field="*{break_time}">
+							<option value="" hidden>▼</option>
+							<option value="15分">15分</option>
+							<option value="30分">30分</option>
+							<option value="45分">45分</option>
+							<option value="60分">60分</option>
+							<option value="75分">75分</option>
+							<option value="90分">90分</option>
+						</select>
+				</div>
+			</div>
+		</div>
+		<div class="gyou">
+			<p class="bluemaru">⚫</p>
+			<p>備考</p>
+			<div class="b-box">
+				<textarea id="t_message" name="message" th:field="*{remarks}"></textarea>
+			</div>
+		</div>
+		<div class="bb">
+			<button type="submit" class="button">登録</button>
+			<button href="attendanceList.html" class="btn-text">戻る</button>
+		</div>
+	</form>
+</body>
+
 </html>

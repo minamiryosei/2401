@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
@@ -15,21 +16,21 @@ import lombok.NonNull;
 @Data
 public class LeavingRegisterrequest implements Serializable {
 
-	@NonNull(message = "ユーザーIDを入力してください")
+	@NonNull(message = "※ユーザーIDを入力してください")
 	private Integer user_id;
 
-	@NonNull(message = "ステータスの選択をしてください")
+	@NonNull(message = "※ステータスの選択をしてください")
 	private String status;
 
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	@NotNull(message = "退勤日を入力してください")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@NotNull(message = "※退勤日を入力してください")
 	private LocalDate Leaving_date;
 
 	@DateTimeFormat(pattern = "HH:mm")
-	@NonNull(message = "退勤時間を入力してください")
-	private LocalTime Leaving_time;
+	@NonNull(message = "※退勤時間を入力してください")
+	private LocalTime leaving_time;
 
-	@NotNull(message = "休憩時間を選択をしてください")
+	@NotBlank(message = "※休憩時間を選択をしてください")
 	private String break_time;
 
 	@Length(max = 100)

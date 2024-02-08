@@ -24,23 +24,25 @@ public class LeavingRegisterController {
 
 	@GetMapping("leavingRegister")
 	public String displayAdd(Model model) {
-		model.addAttribute("leavingRegisterRequest", new LeavingRegisterrequest());
+		model.addAttribute("leavingRegisterrequest",new LeavingRegisterrequest(null, null, null));
 		return "LeavingRegister";
 	}
 
-	@PostMapping("/LeavingRegister/create")
+	@PostMapping("/leavingRegister/create")
 	public String create(@Validated @ModelAttribute LeavingRegisterrequest leavingRegisterRequest,
 			BindingResult result, Model model) {
 
 		if (result.hasErrors()) {
 			List<String> errorList = new ArrayList<String>();
-			for (ObjectError error : result.getAllErrors())
+			for (ObjectError error : result.getAllErrors()) {
 				errorList.add(error.getDefaultMessage());
 		    }
 			model.addAttribute("ValidationError",errorList);
 			return "LeavingRegister";
+			
+		}
 	
-        LeavingRegisterService.create(LeavingRegisterRequest);
+        leavingRegisterService.create(leavingRegisterRequest);
 	    return "LeavingRegister";
 	}
 }
