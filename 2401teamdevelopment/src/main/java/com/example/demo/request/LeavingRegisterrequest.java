@@ -11,15 +11,14 @@ import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
-import lombok.NonNull;
 
 @Data
 public class LeavingRegisterrequest implements Serializable {
 
-	@NonNull(message = "※ユーザーIDを入力してください")
+	@NotNull(message = "※ユーザーIDを入力してください")
 	private Integer user_id;
 
-	@NonNull(message = "※ステータスの選択をしてください")
+	@NotNull(message = "※ステータスの選択をしてください")
 	private String status;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -27,7 +26,7 @@ public class LeavingRegisterrequest implements Serializable {
 	private LocalDate Leaving_date;
 
 	@DateTimeFormat(pattern = "HH:mm")
-	@NonNull(message = "※退勤時間を入力してください")
+	@NotNull(message = "※退勤時間を入力してください")
 	private LocalTime leaving_time;
 
 	@NotBlank(message = "※休憩時間を選択をしてください")

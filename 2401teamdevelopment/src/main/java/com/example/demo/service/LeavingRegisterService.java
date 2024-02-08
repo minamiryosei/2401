@@ -14,22 +14,22 @@ import com.example.demo.request.LeavingRegisterrequest;
 @Service
 @Transactional(dontRollbackOn =Exception.class )
 public class LeavingRegisterService {
-	
-@Autowired
- private  LeavingRegisterrepository leavingRegisterRepository;
 
- public List<LeavingRegisterentity> searchAll(){
-  return leavingRegisterRepository.findAll();
- }
+	@Autowired
+	private  LeavingRegisterrepository leavingRegisterRepository;
 
- public void create(LeavingRegisterrequest leavingRegisterRequest) {
-  LeavingRegisterentity leavingRegister = new LeavingRegisterentity();
-  leavingRegister.setUser_id(leavingRegisterRequest.getUser_id());
-  leavingRegister.setStatus(leavingRegisterRequest.getStatus());
-  leavingRegister.setLeaving_date(leavingRegisterRequest.getLeaving_date());
-  leavingRegister.setLeaving_time(leavingRegisterRequest.getLeaving_time());
-  leavingRegister.setBreak_time(leavingRegisterRequest.getBreak_time());
-  leavingRegister.setRemarks(leavingRegisterRequest.getRemarks());
-  leavingRegisterrepository.save(LeavingRegister);
- }
+	public List<LeavingRegisterentity> searchAll(){
+		return leavingRegisterRepository.findAll();
+	}
+
+	public void create(LeavingRegisterrequest leavingRegisterRequest) {
+		LeavingRegisterentity leavingRegister = new LeavingRegisterentity();
+		leavingRegister.setUser_id(leavingRegisterRequest.getUser_id());
+		leavingRegister.setStatus(leavingRegisterRequest.getStatus());
+		leavingRegister.setLeaving_date(leavingRegisterRequest.getLeaving_date());
+		leavingRegister.setLeaving_time(leavingRegisterRequest.getLeaving_time());
+		leavingRegister.setBreak_time(leavingRegisterRequest.getBreak_time());
+		leavingRegister.setRemarks(leavingRegisterRequest.getRemarks());
+		leavingRegisterRepository.save(leavingRegister);
+	}
 }

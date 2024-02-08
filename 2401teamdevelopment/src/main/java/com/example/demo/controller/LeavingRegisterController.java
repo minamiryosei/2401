@@ -24,7 +24,8 @@ public class LeavingRegisterController {
 
 	@GetMapping("leavingRegister")
 	public String displayAdd(Model model) {
-		model.addAttribute("leavingRegisterrequest",new LeavingRegisterrequest(null, null, null));
+		model.addAttribute("leavingRegisterrequest", new LeavingRegisterrequest());
+
 		return "LeavingRegister";
 	}
 
@@ -36,13 +37,13 @@ public class LeavingRegisterController {
 			List<String> errorList = new ArrayList<String>();
 			for (ObjectError error : result.getAllErrors()) {
 				errorList.add(error.getDefaultMessage());
-		    }
+			}
 			model.addAttribute("ValidationError",errorList);
 			return "LeavingRegister";
-			
+
 		}
-	
-        leavingRegisterService.create(leavingRegisterRequest);
-	    return "LeavingRegister";
+
+		leavingRegisterService.create(leavingRegisterRequest);
+		return "LeavingRegister";
 	}
 }
