@@ -23,7 +23,7 @@ public class LeavingRegisterrequest implements Serializable {
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull(message = "※退勤日を入力してください")
-	private LocalDate Leaving_date;
+	private LocalDate leaving_date;
 
 	@DateTimeFormat(pattern = "HH:mm")
 	@NotNull(message = "※退勤時間を入力してください")
