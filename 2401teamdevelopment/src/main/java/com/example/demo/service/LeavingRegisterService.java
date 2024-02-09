@@ -12,14 +12,19 @@ import com.example.demo.repository.LeavingRegisterrepository;
 import com.example.demo.request.LeavingRegisterrequest;
 
 @Service
-@Transactional(dontRollbackOn =Exception.class )
+@Transactional(dontRollbackOn = Exception.class)
 public class LeavingRegisterService {
 
 	@Autowired
-	private  LeavingRegisterrepository leavingRegisterRepository;
+	private LeavingRegisterrepository leavingRegisterRepository;
 
-	public List<LeavingRegisterentity> searchAll(){
+	public List<LeavingRegisterentity> searchAll() {
 		return leavingRegisterRepository.findAll();
+	}
+
+
+	public LeavingRegisterentity getid (Integer id){
+		return leavingRegisterRepository.getOne(id);
 	}
 
 	public void create(LeavingRegisterrequest leavingRegisterRequest) {

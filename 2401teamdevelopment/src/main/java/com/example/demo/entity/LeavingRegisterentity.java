@@ -14,8 +14,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table
-
+@Table(name = "attendance_tb" , schema = "public" )
 public class LeavingRegisterentity {
 
 	@Id

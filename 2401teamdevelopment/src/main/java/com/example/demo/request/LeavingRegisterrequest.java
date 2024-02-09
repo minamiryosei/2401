@@ -15,6 +15,9 @@ import lombok.Data;
 @Data
 public class LeavingRegisterrequest implements Serializable {
 
+	@NotNull
+	private Integer attendance_id;
+	
 	@NotNull(message = "※ユーザーIDを入力してください")
 	private Integer user_id;
 

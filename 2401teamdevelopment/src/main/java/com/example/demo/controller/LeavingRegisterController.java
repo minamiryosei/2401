@@ -11,8 +11,10 @@ import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.demo.entity.LeavingRegisterentity;
 import com.example.demo.request.LeavingRegisterrequest;
 import com.example.demo.service.LeavingRegisterService;
 
@@ -22,12 +24,19 @@ public class LeavingRegisterController {
 	@Autowired
 	public LeavingRegisterService leavingRegisterService;
 
-	@GetMapping("leavingRegister")
-	public String displayAdd(Model model) {
-		model.addAttribute("leavingRegisterrequest", new LeavingRegisterrequest());
+	@GetMapping("leavingRegister/{id}")
+	public String displayAdd(@PathVariable Integer id,Model model) {
+		LeavingRegisterentity leavingRegister = leavingRegisterService.getid(id);
+		LeavingRegisterrequest leavingRegisterrequest = new LeavingRegisterrequest();
+		
+		leavingRegisterrequest.setAttendance_id(leavingRegister.getAttendance_id());
+		leavingRegisterrequest.setUser_id(leavingRegister.getUser_id());
+		
+		model.addAttribute("leavingRegisterrequest", leavingRegisterrequest);
 
 		return "LeavingRegister";
 	}
+	
 
 	@PostMapping("/leavingRegister/create")
 	public String create(@Validated @ModelAttribute LeavingRegisterrequest leavingRegisterRequest,
