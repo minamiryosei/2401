@@ -31,6 +31,8 @@ public class LeavingRegisterController {
 		
 		leavingRegisterrequest.setAttendance_id(leavingRegister.getAttendance_id());
 		leavingRegisterrequest.setUser_id(leavingRegister.getUser_id());
+		leavingRegisterrequest.setStatus(leavingRegister.getStatus());
+
 		
 		model.addAttribute("leavingRegisterrequest", leavingRegisterrequest);
 

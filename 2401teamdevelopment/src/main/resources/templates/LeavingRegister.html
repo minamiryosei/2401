@@ -9,7 +9,6 @@
 	<link th:href="@{/css/leavingRegister.css}" rel="stylesheet">
 	</link>
 </head>
-
 <body>
 	<div>
 		<header>
@@ -32,7 +31,7 @@
 			<p class="bluemaru">⚫</p>
 			<p>ユーザーID</p>
 			<div class="box">
-				<!--<input type="text" th:field="*{user_id}">-->
+			<input type="text" th:field="*{user_id}">
 			</div>
 		</div>
 		<div class="gyou">
@@ -41,7 +40,7 @@
 			<div class="box">
 				<div class="cp_ipselect cp_sl01">
 					<option value="" hidden>▼</option>
-						<!--<select th:field="*{status}">
+						<select th:field="*{status}">
 						<option value="" hidden>▼</option>
 						<option value="退勤">退勤</option>
 						<option value="遅刻">遅刻</option>
@@ -101,7 +100,7 @@
 		<div class="bb">
 			<button type="submit" class="button">登録</button>
 			<button href="attendanceList.html" class="btn-text">戻る</button>
-		</div>-->
+		</div>
 	</form>
 </body>
 </html>
