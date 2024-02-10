@@ -56,7 +56,7 @@ public class userRegisterController {
   }
 
   /**
-   * ユーザー新規u登録
+   * ユーザー新規登録
    * @param serRequest リクエストデータ
    * @param model Model
    * @return ユーザー情報一覧画面
