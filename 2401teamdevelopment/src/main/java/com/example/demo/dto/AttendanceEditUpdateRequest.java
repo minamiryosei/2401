@@ -16,8 +16,8 @@ import lombok.EqualsAndHashCode;
 public class AttendanceEditUpdateRequest extends AttendanceEditRequest implements Serializable {
 
   /**
-   * ユーザーID
+   * 勤怠ID
    */
   @NotNull
-  private Integer getAttendance_id;
+  private Integer attendance_id;
 }

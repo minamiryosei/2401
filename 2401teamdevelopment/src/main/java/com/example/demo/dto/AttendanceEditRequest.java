@@ -1,87 +1,72 @@
+package com.example.demo.dto;
 
-package com.example.demo.controller;
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.example.demo.dto.AttendanceEditRequest;
-import com.example.demo.dto.AttendanceEditUpdateRequest;
-import com.example.demo.entity.AttendanceEditEntity;
-import com.example.demo.service.AttendanceEditService;
+import lombok.Data;
 
 /**
- * ユーザー情報 Controller
+ * 勤怠編集 リクエストデータ
  */
-@Controller
-public class AttendanceEditRequest {
-
-  /**
-   * ユーザー情報 Service
-   */
-  @Autowired
-  AttendanceEditService attendanceEditService;
-  /**
-   * ユーザー情報一覧画面を表示
-   * @param model Model
-   * @return ユーザー情報一覧画面のHTML
-   */
-  //前回作成したものを使用
-  }
-
-  /**
-   * ユーザー新規登録画面を表示
-   * @param model Model
-   * @return ユーザー情報一覧画面
-   */
-  @RequestMapping("/attendanceEdit/add")
-  public String userRegister(Model model) {
-    model.addAttribute("attendanceEditRequest", new AttendanceEditrRequest());
-    return "attendanceEdit/add";
-
-    /**
-     * ユーザー新規登録
-     * @param userRequest リクエストデータ
-     * @param model Model
-     * @return ユーザー情報一覧画面
-     */
-    @RequestMapping("/user/create")
-    public String userCreate(@Validated @ModelAttribute UserRequest userRequest, BindingResult result, Model model) {
-      if (result.hasErrors()) {
-        // 入力チェックエラーの場合
-        List<String> errorList = new ArrayList<String>();
-        for (ObjectError error : result.getAllErrors()) {
-          errorList.add(error.getDefaultMessage());
-        }
-      //エラー判定後の画面遷移
-        model.addAttribute("validationError", errorList);
-        return "user/add";
-      }
-      // ユーザー情報の登録
-      userService.create(userRequest);
-      return "redirect:/user/list";
-    }
-
-    /**
-     * ユーザー情報詳細画面を表示
-     * @param id 表示するユーザーID
-     * @param model Model
-     * @return ユーザー情報詳細画面
-     */
-    @GetMapping("/user/{id}")
-    public String userDetail(@PathVariable Integer id, Model model) {
-      UserEntity user = userService.findById(id);
-      model.addAttribute("userData", user);
-      return "user/view";
-    }
-  }
+@Data
+public class AttendanceEditRequest implements Serializable {
+	/**
+	 * 勤怠ID
+	 */
+	private Long attendance_id;
+	/**
+	 * ユーザーID
+	 */
+	@NotEmpty(message = "ユーザーIDを入力してください")
+	private Long user_id;
+	/**
+	 * ステータス
+	 */
+	@NotEmpty(message = "ステータスを選択してください")
+	private String status;
+	/**
+	 * 出勤日
+	 */
+	@NotEmpty(message = "出勤日を入力してください")
+	private LocalDate going_date;
+	/**
+	 * 出勤時間
+	 */
+	@NotEmpty(message = "出勤時間を入力してください")
+	private LocalTime going_time;
+	/**
+	 * 退勤日
+	 */
+	@NotEmpty(message = "退勤日を入力してください")
+	private LocalDate leaving_date;
+	/**
+	 * 退勤時間
+	 */
+	@NotEmpty(message = "退勤時間を入力してください")
+	private LocalTime leaving_time;
+	/**
+	 * 稼働時間
+	 */
+	@NotEmpty(message = "稼働時間を入力してください")
+	private LocalTime working_time;
+	/**
+	 * 休憩時間
+	 */
+	@NotEmpty(message = "休憩時間を入力してください")
+	private LocalTime break_time;
+	/**
+	 * 修正理由
+	 */
+	@NotEmpty(message = "修正理由を入力してください")
+	@Size(max = 100, message = "修正理由は100文字以内で入力してください")
+	private String edit_reason;
+	/**
+	 * 備考
+	 */
+	@Size(max = 100, message = "備考は100文字以内で入力してください")
+	private String remarks;
+}

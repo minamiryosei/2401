@@ -4,6 +4,10 @@ header{
 p{
 	font-size: 20px;
 }
+.text-danger{
+	color: red;
+}
+
 .page-banner{
 	width: 1400px;
 	height: 150px;
