@@ -8,13 +8,15 @@ p {
 .contents {
 
 	margin-top: 70px;
+	text-align: center;
 
 }
 
 .text-danger{
 	
 	color:red;
-	
+	margin: 0 auto;
+	padding-left:360px;
 }
 
 input[type="text"] {
