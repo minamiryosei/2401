@@ -17,12 +17,12 @@ public class AttendanceEditRequest implements Serializable {
 	/**
 	 * 勤怠ID
 	 */
-	private Long attendance_id;
+	private Integer attendanceEdit_id;
 	/**
 	 * ユーザーID
 	 */
 	@NotEmpty(message = "ユーザーIDを入力してください")
-	private Long user_id;
+	private Integer user_id;
 	/**
 	 * ステータス
 	 */

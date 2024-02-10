@@ -11,4 +11,4 @@ import com.example.demo.entity.AttendanceEditEntity;
  * 勤怠一覧 Repository
  */
 @Repository
-public interface AttendanceEditRepository extends JpaRepository<AttendanceEditEntity, Long> {}
+public interface AttendanceEditRepository extends JpaRepository<AttendanceEditEntity, Integer> {}

@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.dto.AttendanceEditRequest;
+import com.example.demo.dto.AttendanceEditUpdateRequest;
 import com.example.demo.entity.AttendanceEditEntity;
-
-
+import com.example.demo.service.AttendanceEditService;
 /**
  * 勤怠編集 Controller
  */
@@ -29,8 +29,8 @@ public class AttendanceEditController {
  * @param model Model
  * @return 勤怠編集画面
  */
-@GetMapping("/{id}/attendanceEdit")
-public String attendanceEditEdit(@PathVariable Integer attendance_id, Model model) {
+@GetMapping("/attendanceEdit/{attendanceEdit_id}/attendanceEdit")
+public String displayattendanceEditEdit(@PathVariable Integer attendance_id, Model model) {
   AttendanceEditEntity attendanceEdit = attendanceEditService.findByAttendance_id(attendance_id);
   AttendanceEditRequest attendanceEditUpdateRequest = new AttendanceEditRequest();
   attendanceEditUpdateRequest.setAttendance_id(attendanceEdit.getAttendance_id());
@@ -44,13 +44,12 @@ public String attendanceEditEdit(@PathVariable Integer attendance_id, Model mode
   attendanceEditUpdateRequest.setBreak_time(attendanceEdit.getBreak_time());
   attendanceEditUpdateRequest.setEdit_reason(attendanceEdit.getEdit_reason());
   attendanceEditUpdateRequest.setRemarks(attendanceEdit.getRemarks());
-
   model.addAttribute("attendanceEditUpdateRequest", attendanceEditUpdateRequest);
-  return "attendanceEdit/edit";
+  return "attendanceEdit";
 }
 /**
  * 勤怠編集
- * @param userRequest リクエストデータ
+ * @param attendanceEdiRequest リクエストデータ
  * @param model Model
  * @return 勤怠編集画面
  */
@@ -64,8 +63,8 @@ public String attendanceEditUpdate(@Validated @ModelAttribute AttendanceEditRequ
     model.addAttribute("validationError", errorList);
     return "attendanceEdit";
   }
-  // ユーザー情報の更新
+  // 勤怠情報の更新
   attendanceEditService.update(attendanceEditUpdateRequest);
-  return String.format("redirect:/user/%d", attendanceEditUpdateRequest.getAttendance_id());
+  return String.format("redirect:/attendanceEdit/%d", attendanceEditUpdateRequest.getAttendance_id());
 }
 }

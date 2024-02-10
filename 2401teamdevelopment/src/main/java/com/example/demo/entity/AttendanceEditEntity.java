@@ -29,12 +29,12 @@ public class  AttendanceEditEntity implements Serializable {
   @Id
   @Column(name = "attendance_id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long attendance_id;
+  private Integer  attendance_id;
   /**
    * ユーザーID
    */
   @Column(name = "user_id")
-  private Long user_id;
+  private Integer  user_id;
   /**
    * ステータス
    */
