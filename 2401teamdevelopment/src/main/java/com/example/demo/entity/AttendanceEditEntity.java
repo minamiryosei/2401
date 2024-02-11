@@ -43,7 +43,7 @@ public class  AttendanceEditEntity implements Serializable {
   /**
    * 出勤日
    */
-  @DateTimeFormat(pattern = "yyyy/MM/dd")
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
   @Column(name = "going_date")
   private LocalDate going_date;
   /**
@@ -55,6 +55,7 @@ public class  AttendanceEditEntity implements Serializable {
   /**
    * 退勤日
    */
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
   @Column(name = "leaving_date")
   private LocalDate leaving_date;
   /**

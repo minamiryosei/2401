@@ -21,13 +21,13 @@ public class AttendanceEditService {
 	   * 勤怠編集 Repository
 	   */
 	  @Autowired
-	  private AttendanceEditRepository attendanceEditSRepository;
+	  private AttendanceEditRepository attendanceEditRepository;
 	  /**
 	   * 勤怠情報 主キー検索
 	   * @return 検索結果
 	   */
 	  public AttendanceEditEntity findById(Integer attendance_id) {
-	    return AttendanceEditRepository.findById(attendance_id).get();
+	    return attendanceEditRepository.findById(attendance_id).get();
 	  }
 	/**
 	   * 勤怠編集 更新

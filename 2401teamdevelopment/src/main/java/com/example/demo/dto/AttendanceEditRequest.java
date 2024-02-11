@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import lombok.Data;
@@ -17,46 +18,46 @@ public class AttendanceEditRequest implements Serializable {
 	/**
 	 * 勤怠ID
 	 */
-	private Integer attendanceEdit_id;
+	private Integer attendance_id;
 	/**
 	 * ユーザーID
 	 */
-	@NotEmpty(message = "ユーザーIDを入力してください")
+	@NotNull(message = "ユーザーIDを入力してください")
 	private Integer user_id;
 	/**
 	 * ステータス
 	 */
-	@NotEmpty(message = "ステータスを選択してください")
+	@NotNull(message = "ステータスを選択してください")
 	private String status;
 	/**
 	 * 出勤日
 	 */
-	@NotEmpty(message = "出勤日を入力してください")
+	@NotNull(message = "出勤日を入力してください")
 	private LocalDate going_date;
 	/**
 	 * 出勤時間
 	 */
-	@NotEmpty(message = "出勤時間を入力してください")
+	@NotNull(message = "出勤時間を入力してください")
 	private LocalTime going_time;
 	/**
 	 * 退勤日
 	 */
-	@NotEmpty(message = "退勤日を入力してください")
+	@NotNull(message = "退勤日を入力してください")
 	private LocalDate leaving_date;
 	/**
 	 * 退勤時間
 	 */
-	@NotEmpty(message = "退勤時間を入力してください")
+	@NotNull(message = "退勤時間を入力してください")
 	private LocalTime leaving_time;
 	/**
 	 * 稼働時間
 	 */
-	@NotEmpty(message = "稼働時間を入力してください")
+	@NotNull(message = "稼働時間を入力してください")
 	private LocalTime working_time;
 	/**
 	 * 休憩時間
 	 */
-	@NotEmpty(message = "休憩時間を入力してください")
+	@NotNull(message = "休憩時間を入力してください")
 	private LocalTime break_time;
 	/**
 	 * 修正理由
