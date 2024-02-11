@@ -49,13 +49,13 @@ public class userRegisterController {
    * @param model Model
    * @return ユーザー情報一覧画面
    */
-  @GetMapping(value = "/user/add")
+  @GetMapping(value = "userRegister")
   public String displayAdd(Model model) {
     model.addAttribute("userRequest", new userRegisterRequest());
-    return "user/add";
+    return "userRegister";
   }
 
-  /**
+  /**d
    * ユーザー新規登録
    * @param serRequest リクエストデータ
    * @param model Model
