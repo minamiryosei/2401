@@ -7,15 +7,18 @@ p {
 }
 .contents {
 
-	margin-top: 70px;
+	margin-top: 70%;
 	text-align: center;
 
 }
 
+form{
+	margin-top: 30px;
+
+}
+
 .text-danger{
-	
 	color:red;
-	margin: 0 auto;
 	padding-left:360px;
 }
 
