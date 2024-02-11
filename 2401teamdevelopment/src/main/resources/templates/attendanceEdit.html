@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8">
-    <title>AttendanceEdit</title>
-<link rel="stylesheet" th:href="@{/css/attendanceEdit.css}">
+	<meta charset="UTF-8">
+	<title>AttendanceEdit</title>
+	<link rel="stylesheet" th:href="@{/css/attendanceEdit.css}">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
 					<div class="ae-line">
 						<p class="ae-circle">●</p>
 						<p>勤怠ID</p>
-						<div class="box" th:text="*{attendance_id}"></div>
+						<div class="box" th:text="${attendance_id}"></div>
 					</div>
 					<div class="ae-line">
 						<p class="ae-circle">●</p>
@@ -34,20 +35,21 @@
 						<p class="ae-circle">●</p>
 						<p>ステータス</p>
 						<div class="box">
-							<div class="cp_ipselect cp_sl01" th:field="*{status}">
-								<select required>
-									<option value=""> 出勤ステータス▼</option>
-									<option value="1">出勤</option>
-									<option value="2">遅刻</option>
-									<option value="3">欠席</option>
-									<option value="4">代休</option>
-									<option value="5">所定日</option>
-									<option value="6">有休</option>
-									<option value="7">その他</option>
+							<div class="cp_ipselect cp_sl01">
+								<select required th:field="*{status}" th:value="*{status}">
+									<option value="出勤ステータス"> 出勤ステータス▼</option>
+									<option value="出勤">出勤</option>
+									<option value="退勤">退勤</option>
+									<option value="遅刻">遅刻</option>
+									<option value="早退">早退</option>
+									<option value="欠席">欠席</option>
+									<option value="代休">代休</option>
+									<option value="所定休">所定休</option>
+									<option value="有休">有休</option>
+									<option value="その他">その他</option>
 								</select>
 							</div>
 						</div>
-
 					</div>
 					<div class="ae-line">
 						<p class="ae-circle">●</p>
@@ -74,7 +76,7 @@
 						<p class="ae-circle">●</p>
 						<p>退勤時間</p>
 						<div class="box">
-							<input type="time" th:field="*{leaving_time}" required class="in" />
+							<input type="time" th:field="*{leaving_time}" class="in" />
 						</div>
 					</div>
 					<div class="ae-line">
