@@ -35,7 +35,7 @@ public class LeavingRegisterentity {
 	private LocalTime leaving_time;
 
 	@Column(name = "break_time")
-	private String break_time;
+	private LocalTime break_time;
 
 	@Column(name = "remarks")
 	private String remarks;

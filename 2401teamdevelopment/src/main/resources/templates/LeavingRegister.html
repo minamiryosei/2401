@@ -12,7 +12,7 @@
 <body>
 	<div>
 		<header>
-		<img src="images/ttb.png" th:src="@{/images/ttb.png}" width="1400px" height="150px">
+			<img src="images/ttb.png" th:src="@{/images/ttb.png}" width="1400px" height="150px">
 		</header>
 	</div>
 	<form th:action="@{/leavingRegister/create}" th:object="${leavingRegister}" th:method="post">
@@ -31,7 +31,7 @@
 			<p class="bluemaru">⚫</p>
 			<p>ユーザーID</p>
 			<div class="box">
-			<input type="text" th:field="*{user_id}">
+				<input type="text" th:field="*{user_id}">
 			</div>
 		</div>
 		<div class="gyou">
@@ -39,9 +39,9 @@
 			<p>ステータス</p>
 			<div class="box">
 				<div class="cp_ipselect cp_sl01">
-<!--					<option value="" hidden>▼</option>-->
-						<select th:field="*{status}">
-<!--						<option value="" hidden>▼</option>-->
+					<!--					<option value="" hidden>▼</option>-->
+					<select th:field="*{status}">
+						<!--						<option value="" hidden>▼</option>-->
 						<option value="退勤">退勤</option>
 						<option value="遅刻">遅刻</option>
 						<option value="欠席">欠席</option>
@@ -58,7 +58,7 @@
 			<p>退勤日</p>
 			<div class="box">
 				<div class="date">
-					<input type="date" th:field="*{leaving_date}" id="start" name="trip-start" />
+					<input type="date" th:field="*{leaving_date}"/>
 				</div>
 			</div>
 		</div>
@@ -77,16 +77,16 @@
 			<p>休憩時間</p>
 			<div class="box">
 				<div class="cp_ipselect cp_sl02">
-					        <option value="" hidden>▼</option>
-						    <select th:field="*{break_time}">
-							<option value="" hidden>▼</option>
-							<option value="15分">15分</option>
-							<option value="30分">30分</option>
-							<option value="45分">45分</option>
-							<option value="60分">60分</option>
-							<option value="75分">75分</option>
-							<option value="90分">90分</option>
-						</select>
+					<!-- <option value="" hidden>▼</option>-->
+					<select th:field="*{break_time}">
+						<!--<option value="" hidden>▼</option>-->
+						<option value="00:15">00:15</option>
+						<option value="00:30">00:30</option>
+						<option value="00:45">00:45</option>
+						<option value="01:00">01:00</option>
+						<option value="01:15">01:15</option>
+						<option value="01:30">01:30</option>
+					</select>
 				</div>
 			</div>
 		</div>
@@ -103,4 +103,5 @@
 		</div>
 	</form>
 </body>
+
 </html>
