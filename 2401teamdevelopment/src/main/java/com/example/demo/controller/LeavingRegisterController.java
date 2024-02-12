@@ -39,7 +39,6 @@ public class LeavingRegisterController {
 
 		
 		model.addAttribute("leavingRegister", leavingRegister);
-
 		return "LeavingRegister";
 	}
 	
@@ -59,6 +58,6 @@ public class LeavingRegisterController {
 		}
 
 		leavingRegisterService.create(leavingRegisterRequest);
-		return "LeavingRegister";
+		return "Sample";
 	}
 }
