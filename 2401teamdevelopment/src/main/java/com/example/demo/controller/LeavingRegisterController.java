@@ -53,6 +53,7 @@ public class LeavingRegisterController {
 				errorList.add(error.getDefaultMessage());
 			}
 			model.addAttribute("ValidationError",errorList);
+			model.addAttribute("leavingRegister", leavingRegisterRequest);
 			return "LeavingRegister";
 
 		}

@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.Data;
 
 @Entity
@@ -27,7 +29,9 @@ public class LeavingRegisterentity {
 
 	@Column(name = "status")
 	private String status;
-
+	
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "leaving_date")
 	private LocalDate leaving_date;
 
