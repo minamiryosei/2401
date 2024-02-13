@@ -11,12 +11,10 @@ import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.demo.dto.userRegisterRequest;
-import com.example.demo.entity.userRegister;
 import com.example.demo.service.userRegisterService;
 
 
@@ -33,25 +31,13 @@ public class userRegisterController {
   private userRegisterService userService;
 
   /**
-   * ユーザー情報一覧画面を表示
-   * @param model Model
-   * @return ユーザー情報一覧画面
-   */
-  @GetMapping(value = "/user/list")
-  public String displayList(Model model) {
-    List<userRegister> userlist = userService.searchAll();
-    model.addAttribute("userlist", userlist);
-    return "user/list";
-  }
-
-  /**
    * ユーザー新規登録画面を表示
    * @param model Model
    * @return ユーザー情報一覧画面
    */
   @GetMapping(value = "userRegister")
   public String displayAdd(Model model) {
-    model.addAttribute("userRequest", new userRegisterRequest());
+    model.addAttribute("userRegisterRequest", new userRegisterRequest());
     return "userRegister";
   }
 
@@ -71,21 +57,10 @@ public class userRegisterController {
         errorList.add(error.getDefaultMessage());
       }
       model.addAttribute("validationError", errorList);
-      return "user/add";
+      return "userRegister";
     }
     // ユーザー情報の登録
     userService.create(userRequest);
-    return "redirect:/user/list";
-  }
-
-  /**
-   * ユーザー情報詳細画面を表示
-   * @param id 表示するユーザーID
-   * @param model Model
-   * @return ユーザー情報詳細画面
-   */
-  @GetMapping("/user/{id}")
-  public String displayView(@PathVariable Long id, Model model) {
-    return "user/view";
+    return "redirect:/userRegister";
   }
 }
