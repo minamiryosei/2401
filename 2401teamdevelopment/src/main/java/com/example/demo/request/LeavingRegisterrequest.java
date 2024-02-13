@@ -27,6 +27,7 @@ public class LeavingRegisterrequest implements Serializable {
 	@NotNull(message = "※退勤日を入力してください")
 	private LocalDate leaving_date;
 
+	@DateTimeFormat(pattern = "HH:mm")
 	@NotNull(message = "※退勤時間を入力してください")
 	private LocalTime leaving_time;
 

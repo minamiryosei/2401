@@ -35,6 +35,7 @@ public class LeavingRegisterentity {
 	@Column(name = "leaving_date")
 	private LocalDate leaving_date;
 
+	@DateTimeFormat(pattern = "HH:mm")
 	@Column(name = "leaving_time")
 	private LocalTime leaving_time;
 
