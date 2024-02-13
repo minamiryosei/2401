@@ -11,9 +11,11 @@ p{
     margin-top:70px;
 
   }
-text-danger{
 
- color:red;
+.text-danger{
+	color:red;
+	padding-left:360px;
+
 }
 
 input[type="text"]{
