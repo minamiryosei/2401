@@ -5,21 +5,20 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>ユーザー登録</title>
-     <link rel="stylesheet" href="@{/css/userRegister.css}">
+     <link rel="stylesheet" th:href="@{/css/userRegister.css}">
  </head>
 
  <body>
     <header>
-        <img src="images/ytb.png" width="1400px" height="150px">
+        <img src="images/ytb.png" th:src="@{/images/ytb.png}" width="1400px" height="150px">
     </header>
 
     <div>
-      <form th:action="@{/userRegister/create}" th:object="${userRegisterrequest}" th:method="post">
       <div th:if="${ValidationError}" th:each="error : ${ValidationError}">
         <label class="text-danger" th:text="${error}"></label>
     </div>
-    
-    <form th:action="@{/user/create}" th:object="${userRequest}" th:method="post">
+
+    <form th:action="@{/userRegister/create}" th:object="${userRegisterRequest}" th:method="post">
 
     <div class="contents">
        <div>
@@ -38,7 +37,7 @@
              <p class="urmaru">●</p>
              <p>名前</p>
              <div class="urbox">
-              <input type="text" th:field="*{user_name}></div>
+                <input type="text" th:field="*{name}">
             </div>
         </div>
 
@@ -47,7 +46,7 @@
              <p class="urmaru">●</p>
              <p>フリガナ</p>
              <div class="urbox">
-              <input type="text" placeholder="全角カナ"></div>
+              <input type="text" placeholder="全角カナ" th:field="*{furigana}"></div>
             </div>
         </div>
 
@@ -56,7 +55,7 @@
              <p class="urmaru">●</p>
              <p>メールアドレス</p>
              <div class="urbox">
-                 <input type="text" placeholder="sample@exam.jp"></div>
+                 <input type="text" placeholder="sample@exam.jp" th:field="*{mail}"></div>
             </div>
         </div>
 
@@ -65,7 +64,7 @@
              <p class="urmaru">●</p>
              <p>パスワード</p>
              <div class="urbox">
-                 <input type="text" placeholder="4文字以上"></div>
+                 <input type="text" placeholder="4文字以上" th:field="*{password}"></div>
             </div>
         </div>
     </div>
@@ -74,6 +73,8 @@
         <button type="submit" class="button">登録</button>
         <button href="attendanceList.html" class="button">戻る</button>
     </div>
+
+    </form>
 
  </body>
 </html>
