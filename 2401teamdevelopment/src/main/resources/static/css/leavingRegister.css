@@ -18,6 +18,11 @@ p{
 
 }
 
+form{
+	margin-top: 30px;
+
+}
+
 input[type="text"]{
 
     width: 520px;
