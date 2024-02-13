@@ -18,6 +18,8 @@
       <div th:if="${ValidationError}" th:each="error : ${ValidationError}">
         <label class="text-danger" th:text="${error}"></label>
     </div>
+    
+    <form th:action="@{/user/create}" th:object="${userRequest}" th:method="post">
 
     <div class="contents">
        <div>
@@ -36,7 +38,7 @@
              <p class="urmaru">●</p>
              <p>名前</p>
              <div class="urbox">
-              <input type="text" th:field="*{user_id}></div>
+              <input type="text" th:field="*{user_name}></div>
             </div>
         </div>
 
