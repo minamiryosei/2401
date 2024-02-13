@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +35,6 @@ public class userRegisterService {
    * @param user ユーザー情報
    */
   public void create(userRegisterRequest userRequest) {
-    Date now = new Date();
     userRegister user = new userRegister();
     user.setName(userRequest.getName());
     user.setFurigana(userRequest.getFurigana());
