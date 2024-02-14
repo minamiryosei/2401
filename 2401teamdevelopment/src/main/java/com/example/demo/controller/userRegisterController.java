@@ -28,7 +28,7 @@ public class userRegisterController {
    * ユーザー情報 Service
    */
   @Autowired
-  private userRegisterService userService;
+  private userRegisterService userRegisterService;
 
   /**
    * ユーザー新規登録画面を表示
@@ -60,7 +60,7 @@ public class userRegisterController {
       return "userRegister";
     }
     // ユーザー情報の登録
-    userService.create(userRequest);
+    userRegisterService.create(userRequest);
     return "redirect:/userRegister";
   }
 }

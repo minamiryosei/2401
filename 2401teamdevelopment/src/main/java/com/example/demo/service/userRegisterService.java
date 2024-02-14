@@ -20,27 +20,27 @@ public class userRegisterService {
    * ユーザー情報 Repository
    */
   @Autowired
-  private userRegisterRepository userRepository;
+  private userRegisterRepository userRegisterRepository;
 
   /**
    * ユーザー情報 全検索
    * @return 検索結果
    */
   public List<userRegister> searchAll() {
-    return userRepository.findAll();
+    return userRegisterRepository.findAll();
   }
 
   /**
    * ユーザー情報 新規登録
    * @param user ユーザー情報
    */
-  public void create(userRegisterRequest userRequest) {
+    public void create(userRegisterRequest userRegisterRequest) {
     userRegister user = new userRegister();
-    user.setName(userRequest.getName());
-    user.setFurigana(userRequest.getFurigana());
-    user.setMail(userRequest.getMail());
-    user.setPassword(userRequest.getPassword());
+    user.setName(userRegisterRequest.getName());
+    user.setFurigana(userRegisterRequest.getFurigana());
+    user.setMail(userRegisterRequest.getMail());
+    user.setPassword(userRegisterRequest.getPassword());
 
-    userRepository.save(user);
+    userRegisterRepository.save(user);
   }
 }
