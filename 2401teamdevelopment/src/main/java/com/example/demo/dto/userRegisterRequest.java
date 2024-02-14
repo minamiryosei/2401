@@ -23,7 +23,7 @@ public class userRegisterRequest implements Serializable {
    * 住所
    */
   @NotEmpty(message = "フリガナを入力してください")
-  @Pattern(regexp = "^[ァ-ヶー]*$", message = "全角カタカナで入力してください")
+  @Pattern(regexp = "^[ァ-ヶー　]*$", message = "全角カタカナで入力してください")
   private String furigana;
   /**
    * 住所
