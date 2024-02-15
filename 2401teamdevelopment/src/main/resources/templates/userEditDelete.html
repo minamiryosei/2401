@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ユーザー編集・削除</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>ユーザー編集・削除</title>
      <link rel="stylesheet" th:href="@{/css/userEditDelete.css}">
 </head>
 
 <body>
     <header>
-        <img src="img/yhsb.png" width="1400px" height="150px">
+        <img src="img/yhsb.png" th:src="@{/img/yhsb.png}" width="1400px" height="150px">
     </header>
+    
+     <div>
+        <div th:if="${ValidationError}" th:each="error : ${ValidationError}">
+        <label class="text-danger" th:text="${error}"></label>
+    </div>
+    
+    <form th:action="@{/user/update}" th:object="${userEditDeleteUpdateRequest}" th:method="post">
 
     <div class="contents">
        <div>
@@ -28,7 +35,7 @@
              <p class="uemaru">●</p>
              <p>名前</p>
              <div class="uebox">
-              <input type="text"></div>
+               <input type="text" th:field="*{name}"></div>
             </div>
         </div>
 
@@ -37,7 +44,7 @@
              <p class="uemaru">●</p>
              <p>フリガナ</p>
              <div class="uebox">
-              <input type="text" placeholder="全角カナ"></div>
+              <input type="text" placeholder="全角カナ" th:field="*{furigana}"></div>
             </div>
         </div>
 
@@ -46,7 +53,7 @@
              <p class="uemaru">●</p>
              <p>メールアドレス</p>
              <div class="uebox">
-                 <input type="text" placeholder="sample@exam.jp"></div>
+                 <input type="text" placeholder="sample@exam.jp" th:field="*{mail}"></div>
             </div>
         </div>
 
@@ -55,15 +62,15 @@
              <p class="uemaru">●</p>
              <p>パスワード</p>
              <div class="uebox">
-                 <input type="text" placeholder="4文字以上"></div>
+                 <input type="text" placeholder="8文字以上" th:field="*{password}"></div>
             </div>
         </div>
     </div>
 
     <div class="ueb">
-        <button type="button" class="button">登録</button>
+        <th:href="@{/user/{id}/edit(id=*{id})}" class="button">登録</button>
+        <th:href="@{/user/{id}/delete(id=*{id})}" class="button">削除</button>
         <button href="attendanceList.html" class="button">戻る</button>
-        <button type="button" class="button">削除</button>
     </div>
 
 </body>

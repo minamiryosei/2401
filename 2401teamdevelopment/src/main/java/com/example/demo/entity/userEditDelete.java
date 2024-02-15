@@ -1,7 +1,6 @@
 package com.example.demo.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,17 +12,17 @@ import javax.persistence.Table;
 import lombok.Data;
 
 /**
- * ユーザー情報 Entity
+ * ユーザー情報 Enyity
  */
 @Entity
 @Data
-@Table(name = "user")
+@Table(name = "user_tb")
 public class userEditDelete implements Serializable {
   /**
-   * ID
+   * UserID
    */
   @Id
-  @Column(name = "id")
+  @Column(name = "user_id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   /**
@@ -32,28 +31,19 @@ public class userEditDelete implements Serializable {
   @Column(name = "name")
   private String name;
   /**
-   * 住所
+   * フリガナ
    */
-  @Column(name = "address")
-  private String address;
+  @Column(name = "furigana")
+  private String furigana;
   /**
-   * 電話番号
+   * メールアドレス
    */
-  @Column(name = "phone")
-  private String phone;
+  @Column(name = "mail")
+  private String mail;
   /**
-   * 更新日時
+   * パスワード
    */
-  @Column(name = "update_date")
-  private Date updateDate;
-  /**
-   * 登録日時
-   */
-  @Column(name = "create_date")
-  private Date createDate;
-  /**
-   * 削除日時
-   */
-  @Column(name = "delete_date")
-  private Date deleteDate;
+  @Column(name = "password")
+  private String password;
+
 }

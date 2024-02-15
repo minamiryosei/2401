@@ -3,7 +3,6 @@ package com.example.demo.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.demo.dto.userEditDeleteUpdateRequest;
+import com.example.demo.entity.userEditDelete;
 import com.example.demo.service.userEditDeleteService;
 
 /**
@@ -38,7 +38,7 @@ public class userEditDeleteController {
    */
   @GetMapping(value = "/user/list")
   public String displayList(Model model) {
-    List<User> userlist = userService.searchAll();
+    List<userEditDelete> userlist = userService.searchAll();
     model.addAttribute("userlist", userlist);
     return "user/list";
   }
@@ -48,9 +48,9 @@ public class userEditDeleteController {
    * @param model Model
    * @return ユーザー情報一覧画面
    */
-  @GetMapping(value = "/user/add")
+  @GetMapping(value = "userRegister")
   public String displayAdd(Model model) {
-    return "user/add";
+    return "userRegister";
   }
 
   /**
@@ -61,7 +61,7 @@ public class userEditDeleteController {
    */
   @GetMapping("/user/{id}")
   public String displayView(@PathVariable Long id, Model model) {
-    User user = userEditDeleteService.findById(id);
+    userEditDelete user = userService.findById(id);
     model.addAttribute("userData", user);
     return "user/view";
   }
@@ -72,17 +72,17 @@ public class userEditDeleteController {
    * @param model Model
    * @return ユーザー編集画面
    */
-  @GetMapping("/user/{id}/edit")
+  @GetMapping("/userEditDelete/{id}/edit")
   public String displayEdit(@PathVariable Long id, Model model) {
-    User user = userEditDeleteService.findById(id);
+    userEditDelete user = userService.findById(id);
     userEditDeleteUpdateRequest userUpdateRequest = new userEditDeleteUpdateRequest();
     userUpdateRequest.setId(user.getId());
     userUpdateRequest.setName(user.getName());
     userUpdateRequest.setFurigana(user.getFurigana());
-    userUpdateRequest.setAddress(user.getAddress());
+    userUpdateRequest.setMail(user.getMail());
     userUpdateRequest.setPassword(user.getPassword());
-    model.addAttribute("userUpdateRequest", userUpdateRequest);
-    return "user/edit";
+    model.addAttribute("userEditDeleteUpdateRequest", userUpdateRequest);
+    return "userEditDelete";
   }
 
   /**
@@ -101,11 +101,11 @@ public class userEditDeleteController {
         errorList.add(error.getDefaultMessage());
       }
       model.addAttribute("validationError", errorList);
-      return "user/edit";
+      return "userEditDelete";
     }
 
     // ユーザー情報の更新
-    userEditDeleteService.update(userUpdateRequest);
+    userService.update(userUpdateRequest);
     return String.format("redirect:/user/%d", userUpdateRequest.getId());
   }
 
