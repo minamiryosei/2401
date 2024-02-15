@@ -50,7 +50,16 @@ public class userEditDeleteService {
     user.setFurigana(userUpdateRequest.getFurigana());
     user.setMail(userUpdateRequest.getMail());
     user.setPassword(userUpdateRequest.getPassword());
-    
     userRepository.save(user);
+  }
+  
+
+  /**
+   * ユーザー情報 物理削除
+   * @param id ユーザーID
+   */
+  public void delete(Long id) {
+    userEditDelete user = findById(id);
+    userRepository.delete(user);
   }
 }
