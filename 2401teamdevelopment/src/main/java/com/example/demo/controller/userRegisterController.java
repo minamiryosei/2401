@@ -56,7 +56,7 @@ public class userRegisterController {
       for (ObjectError error : result.getAllErrors()) {
         errorList.add(error.getDefaultMessage());
       }
-      model.addAttribute("validationError", errorList);
+      model.addAttribute("ValidationError", errorList);
       return "userRegister";
     }
     // ユーザー情報の登録
