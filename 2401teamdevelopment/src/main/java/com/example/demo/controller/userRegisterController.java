@@ -47,7 +47,7 @@ public class userRegisterController {
    * @param model Model
    * @return ユーザー情報一覧画面
    */
-  @RequestMapping(value = "/user/create", method = RequestMethod.POST)
+  @RequestMapping(value = "/userRegister/create", method = RequestMethod.POST)
   public String create(@Validated @ModelAttribute userRegisterRequest userRequest, BindingResult result, Model model) {
 
     if (result.hasErrors()) {
