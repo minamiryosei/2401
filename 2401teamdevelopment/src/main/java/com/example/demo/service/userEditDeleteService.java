@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import java.util.Date;
 import java.util.List;
 
 import org.apache.catalina.User;
@@ -45,10 +44,11 @@ public class userEditDeleteService {
    */
   public void update(userEditDeleteUpdateRequest userUpdateRequest) {
     User user = findById(userUpdateRequest.getId());
-    user.setAddress(userUpdateRequest.getAddress());
     user.setName(userUpdateRequest.getName());
-    user.setPhone(userUpdateRequest.getPhone());
-    user.setUpdateDate(new Date());
+    user.setFurigana(userUpdateRequest.getFurigana());
+    user.setMail(userUpdateRequest.getMail());
+    user.setPassword(userUpdateRequest.getPassword());
+    
     userEditDeleteRepository.save(user);
   }
 }

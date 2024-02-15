@@ -78,8 +78,9 @@ public class userEditDeleteController {
     userEditDeleteUpdateRequest userUpdateRequest = new userEditDeleteUpdateRequest();
     userUpdateRequest.setId(user.getId());
     userUpdateRequest.setName(user.getName());
-    userUpdateRequest.setPhone(user.getPhone());
+    userUpdateRequest.setFurigana(user.getFurigana());
     userUpdateRequest.setAddress(user.getAddress());
+    userUpdateRequest.setPassword(user.getPassword());
     model.addAttribute("userUpdateRequest", userUpdateRequest);
     return "user/edit";
   }
