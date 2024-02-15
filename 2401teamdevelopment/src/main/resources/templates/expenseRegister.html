@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<header>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width = device-width,initial-scale = 1.0">
+	<title>経費申請</title>
+	<link th:href="@{../css/expenseRegister.css}" rel="stylesheet">
+	<img th:src="@{/images/ksb.png}" width="1400px" height="150px" alt="">
+</header>
+
+<body>
+	<div th:if="${validationError}" th:each="error : ${validationError}">
+		<label class="text-danger" th:text="${error}"></label>
+	</div>
+
+	<form th:action="@{/expenseRegister/create}" th:object="${expenseRegisterRequest}" th:method="post">
+		
+<!--			<label class="text-danger" th:text="${error}"></label>-->
+		</div>
+
+		<div class="gyou">
+			<p class="ksmaru">⚫️</p>
+			<p>経費ID</p>
+			<input class="text" placeholder="経費IDは自動で採番致します" readonly>
+		</div>
+
+		<div class="gyou">
+			<p class="ksmaru">⚫️</p>
+			<p>ユーザーID</p>
+			<input class="text" th:field="*{user_id}">
+		</div>
+
+		<div class="gyou">
+			<p class="ksmaru">⚫️</p>
+			<p>申請日</p>
+			<div class="form_input">
+				<input type="text" onfocus="this.type='date'" onblur="if(!this.value)this.type='text';"
+					onchange="if(!this.value)this.type='text'" placeholder=" 年 / 月 / 日 " value=""
+					th:field="*{application_date}" class="in">
+			</div>
+		</div>
+
+		<div class="gyou">
+			<p class="ksmaru">⚫️</p>
+			<p>経費項目</p>
+			<div class="box">
+				<input type="text" th:field="*{category}" class="in">
+			</div>
+		</div>
+
+		<div class="gyou">
+			<p class="ksmaru">⚫️</p>
+			<p>金額</p>
+			<div class="box">
+				<input type="text" th:field="*{amount}" class="in">
+			</div>
+		</div>
+
+		<div class="gyou">
+			<p class="ksmaru-b">⚫️</p>
+			<p>備考</p>
+			<textarea class="b-box" placeholder="１００文字以内で入力してください。" 
+				th:field=" *{remarks}"></textarea>
+		</div>
+
+		<div class="bb">
+			<button type="submit"  class="btn-text">登録</button>
+			<button type="button" href="user/myPage"  class="button">戻る</button>
+		</div>
+	</form>
+</body>
+
+</html>
