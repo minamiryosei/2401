@@ -12,10 +12,9 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.dto.AttendanceEditRequest;
-import com.example.demo.dto.AttendanceEditUpdateRequest;
 import com.example.demo.entity.AttendanceEditEntity;
 import com.example.demo.service.AttendanceEditService;
 
@@ -40,19 +39,19 @@ public class AttendanceEditController {
 @GetMapping("attendanceEdit/{attendance_id}/edit")
 public String displayattendanceEditEdit(@PathVariable Integer attendance_id, Model model) {
   AttendanceEditEntity attendanceEdit = attendanceEditService.findById(attendance_id);
-  AttendanceEditRequest attendanceEditUpdateRequest = new AttendanceEditRequest();
-  attendanceEditUpdateRequest.setAttendance_id(attendanceEdit.getAttendance_id());
-  attendanceEditUpdateRequest.setUser_id(attendanceEdit.getUser_id());
-  attendanceEditUpdateRequest.setStatus(attendanceEdit.getStatus());
-  attendanceEditUpdateRequest.setGoing_date(attendanceEdit.getGoing_date());
-  attendanceEditUpdateRequest.setGoing_time(attendanceEdit.getGoing_time());
-  attendanceEditUpdateRequest.setLeaving_date(attendanceEdit.getLeaving_date());
-  attendanceEditUpdateRequest.setLeaving_time(attendanceEdit.getLeaving_time());
-  attendanceEditUpdateRequest.setWorking_time(attendanceEdit.getWorking_time());
-  attendanceEditUpdateRequest.setBreak_time(attendanceEdit.getBreak_time());
-  attendanceEditUpdateRequest.setEdit_reason(attendanceEdit.getEdit_reason());
-  attendanceEditUpdateRequest.setRemarks(attendanceEdit.getRemarks());
-  model.addAttribute("attendanceEditUpdateRequest", attendanceEditUpdateRequest);
+  AttendanceEditRequest AttendanceEditRequest = new AttendanceEditRequest();
+  AttendanceEditRequest.setAttendance_id(attendanceEdit.getAttendance_id());
+  AttendanceEditRequest.setUser_id(attendanceEdit.getUser_id());
+  AttendanceEditRequest.setStatus(attendanceEdit.getStatus());
+  AttendanceEditRequest.setGoing_date(attendanceEdit.getGoing_date());
+  AttendanceEditRequest.setGoing_time(attendanceEdit.getGoing_time());
+  AttendanceEditRequest.setLeaving_date(attendanceEdit.getLeaving_date());
+  AttendanceEditRequest.setLeaving_time(attendanceEdit.getLeaving_time());
+  AttendanceEditRequest.setWorking_time(attendanceEdit.getWorking_time());
+  AttendanceEditRequest.setBreak_time(attendanceEdit.getBreak_time());
+  AttendanceEditRequest.setEdit_reason(attendanceEdit.getEdit_reason());
+  AttendanceEditRequest.setRemarks(attendanceEdit.getRemarks());
+  model.addAttribute("AttendanceEditRequest", AttendanceEditRequest);
   return "attendanceEdit";
 }
 /**
@@ -61,8 +60,8 @@ public String displayattendanceEditEdit(@PathVariable Integer attendance_id, Mod
  * @param model Model
  * @return 勤怠編集画面
  */
-@PostMapping("attendanceEdit/update")
-public String attendanceEditUpdate(@Validated @ModelAttribute AttendanceEditUpdateRequest attendanceEditUpdateRequest, BindingResult result, Model model) {
+@RequestMapping("attendanceEdit/update")
+public String attendanceEditUpdate(@Validated @ModelAttribute AttendanceEditRequest attendanceEditRequest, BindingResult result, Model model) {
   if (result.hasErrors()) {
     List<String> errorList = new ArrayList<String>();
     for (ObjectError error : result.getAllErrors()) {
@@ -72,7 +71,7 @@ public String attendanceEditUpdate(@Validated @ModelAttribute AttendanceEditUpda
     return "attendanceEdit";
   }
   // 勤怠情報の更新
-  attendanceEditService.update(attendanceEditUpdateRequest);
-  return String.format("redirect:/attendanceEdit/%d", attendanceEditUpdateRequest.getAttendance_id());
+  attendanceEditService.update(attendanceEditRequest);
+  return String.format("redirect:/attendanceEdit/%d/edit", attendanceEditRequest.getAttendance_id());
 }
 }

@@ -4,7 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>AttendanceEdit</title>
+	<link rel="stylesheet" href="path/to/reset.css">
 	<link rel="stylesheet" th:href="@{/css/attendanceEdit.css}">
+	<link rel="stylesheet" href="../static/css/attendanceEdit.css">
 </head>
 
 <body>
@@ -16,13 +18,15 @@
 			<label class="text-danger" th:text="${error}"></label>
 		</div>
 
-		<form th:action="@{attendanceEdit/update}" th:object="${attendanceEditUpdateRequest}" th:method="post">
+		<form th:action="@{/attendanceEdit/update}" th:object="${AttendanceEditRequest}" th:method="post">
 			<div class="contents">
 				<div>
 					<div class="ae-line">
 						<p class="ae-circle">●</p>
 						<p>勤怠ID</p>
-						<div class="box" th:text="${attendance_id}"></div>
+						<div class="box">
+							<input type="text" class="in" th:field="*{attendance_id}" readonly></input>
+						</div>
 					</div>
 					<div class="ae-line">
 						<p class="ae-circle">●</p>
@@ -97,7 +101,7 @@
 						<p class="ae-circle">●</p>
 						<p>修正理由</p>
 						<div class="sr-box">
-							<textarea th:text="*{edit_reason}" cols="65" rows="3" class="in"></textarea>
+							<textarea th:field="*{edit_reason}" cols="65" rows="3" class="in"></textarea>
 						</div>
 					</div>
 					<div class="ae-line">
@@ -106,13 +110,14 @@
 							<p>備考</p>
 						</div>
 						<div class="b-box">
-							<textarea th:text="*{remarks}" cols="65" rows="3" class="in"></textarea>
+							<textarea th:field="*{remarks}" cols="65" rows="3" class="in"></textarea>
 						</div>
 					</div>
 				</div>
 				<div class="bb">
-					<button type="submit" class="btn-text">登録</button>
-					<a href="attendanceList.html" class="button">戻る</a>
+					<button type="submit" href="attendanceEdit.html" class="btn-text">登録</button>
+					<button href="attendanceEdit.html" class="button">戻る</button>
+
 				</div>
 
 			</div>

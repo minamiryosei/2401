@@ -1,18 +1,24 @@
-header{
+header {
 	text-align: center;
 }
-p{
+
+p {
 	font-size: 20px;
 }
-.text-danger{
+.container{
+	text-align: center;
+}
+
+.text-danger {
 	color: red;
 }
 
-.page-banner{
+.page-banner {
 	width: 1400px;
 	height: 150px;
 }
-.in{
+
+.in {
 	width: 97%;
 	height: 90%;
 	outline: none;
@@ -27,6 +33,7 @@ p{
 	width: 90%;
 	text-align: center;
 }
+
 .cp_ipselect select {
 	font-size: 20px;
 	width: 100%;
@@ -43,28 +50,35 @@ p{
 	appearance: none;
 	text-align: center;
 }
-.contents{
+
+.contents {
 	margin-top: 70px;
 }
-.ae-line{
+
+.ae-line {
 	width: 50%;
 	margin: 0 auto;
 	display: flex;
 }
-.ae-circle{
+
+.ae-circle {
 	margin-right: 30px;
 	color: #ffb103;
 }
-.box{
-	width:70%;
+
+.box {
+	width: 70%;
 	height: 30px;
 	border-radius: 5px;
 	background-color: #e2e2e2;
 	margin-left: auto;
 	margin-top: 20px;
 	text-align: center;
+	font-size: 20px;
+	font-family: 'メイリオ', 'Meiryo', sans-serif;
 }
-.sr-box{
+
+.sr-box {
 	width: 70%;
 	height: 60px;
 	border-radius: 5px;
@@ -72,16 +86,21 @@ p{
 	margin-left: auto;
 	margin-top: 20px;
 	text-align: center;
+	font-size: 20px;
+	font-family: 'メイリオ', 'Meiryo', sans-serif;
 }
-.ae-circle-line{
+
+.ae-circle-line {
 	margin-top: 20px;
 	display: flex;
 }
-.ae-circle-notes{
+
+.ae-circle-notes {
 	margin-right: 30px;
 	color: rgba(0, 0, 0, 0);
 }
-.b-box{
+
+.b-box {
 	width: 70%;
 	height: 60px;
 	border-radius: 5px;
@@ -89,18 +108,23 @@ p{
 	margin-left: auto;
 	margin-top: 40px;
 	text-align: center;
+	font-size: 20px;
+	font-family: 'メイリオ', 'Meiryo', sans-serif;
 }
-.bb{
+
+.bb {
 	display: flex;
 	width: 130px;
-	margin:70px auto;
+	margin: 70px auto;
 }
-.list-b{
+
+.list-b {
 	display: flex;
 	width: 60px;
-	margin:70px auto;
+	margin: 70px auto;
 }
-.button{
+
+.button {
 	width: 60px;
 	height: 30px;
 	font-size: 20px;
@@ -109,9 +133,10 @@ p{
 	border-radius: 5px;
 	border: none;
 	text-align: center;
-	text-decoration:none;
+	text-decoration: none;
 }
-.btn-text{
+
+.btn-text {
 	width: 60px;
 	height: 30px;
 	font-size: 20px;
@@ -120,9 +145,6 @@ p{
 	border: none;
 	text-align: center;
 	color: #ffffff;
-	text-decoration:none;
+	text-decoration: none;
 	margin-right: 10px;
 }
-
-
-

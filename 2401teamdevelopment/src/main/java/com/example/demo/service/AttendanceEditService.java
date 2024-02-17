@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.demo.dto.AttendanceEditUpdateRequest;
+import com.example.demo.dto.AttendanceEditRequest;
 import com.example.demo.entity.AttendanceEditEntity;
 import com.example.demo.repository.AttendanceEditRepository;
 
@@ -33,18 +33,18 @@ public class AttendanceEditService {
 	   * 勤怠編集 更新
 	   * @param attendanceEdit 勤怠編集情報
 	   */
-	  public void update(AttendanceEditUpdateRequest attendanceEditUpdateRequest) {
-		AttendanceEditEntity attendanceEdit = findById(attendanceEditUpdateRequest.getAttendance_id());
-		attendanceEdit.setAttendance_id(attendanceEditUpdateRequest.getAttendance_id());
-		attendanceEdit.setUser_id(attendanceEditUpdateRequest.getUser_id());
-		attendanceEdit.setStatus(attendanceEditUpdateRequest.getStatus());
-		attendanceEdit.setGoing_date(attendanceEditUpdateRequest.getGoing_date());
-		attendanceEdit.setGoing_time(attendanceEditUpdateRequest.getGoing_time());
-		attendanceEdit.setLeaving_date(attendanceEditUpdateRequest.getLeaving_date());
-		attendanceEdit.setLeaving_time(attendanceEditUpdateRequest.getLeaving_time());
-		attendanceEdit.setBreak_time(attendanceEditUpdateRequest.getBreak_time());
-		attendanceEdit.setEdit_reason(attendanceEditUpdateRequest.getEdit_reason());
-		attendanceEdit.setRemarks(attendanceEditUpdateRequest.getRemarks());
+	  public void update(AttendanceEditRequest AttendanceEditRequest) {
+		AttendanceEditEntity attendanceEdit = findById(AttendanceEditRequest.getAttendance_id());
+		attendanceEdit.setAttendance_id(AttendanceEditRequest.getAttendance_id());
+		attendanceEdit.setUser_id(AttendanceEditRequest.getUser_id());
+		attendanceEdit.setStatus(AttendanceEditRequest.getStatus());
+		attendanceEdit.setGoing_date(AttendanceEditRequest.getGoing_date());
+		attendanceEdit.setGoing_time(AttendanceEditRequest.getGoing_time());
+		attendanceEdit.setLeaving_date(AttendanceEditRequest.getLeaving_date());
+		attendanceEdit.setLeaving_time(AttendanceEditRequest.getLeaving_time());
+		attendanceEdit.setBreak_time(AttendanceEditRequest.getBreak_time());
+		attendanceEdit.setEdit_reason(AttendanceEditRequest.getEdit_reason());
+		attendanceEdit.setRemarks(AttendanceEditRequest.getRemarks());
 		attendanceEditRepository.save(attendanceEdit);
 	  }
 }
