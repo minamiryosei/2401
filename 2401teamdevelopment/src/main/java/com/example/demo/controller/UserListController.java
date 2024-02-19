@@ -35,10 +35,10 @@ public class UserListController {
    * @param model Model
    * @return ユーザー情報一覧画面のHTML
    */
-  @GetMapping(value="/user/userList")
+  @GetMapping(value="/userList")
   public String userList(Model model) {
     List<UserListEntity> userList = userlistService.searchAll();
     model.addAttribute("userList", userList);
-    return "user/userList";
+    return "/userList";
   }
 }
