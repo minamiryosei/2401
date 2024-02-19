@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.demo.request.GoingRegisterrequest;
+import com.example.demo.dto.GoingRegisterrequest;
 import com.example.demo.service.GoingRegisterservice;
 
 @Controller
