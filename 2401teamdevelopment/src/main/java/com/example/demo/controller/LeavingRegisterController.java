@@ -27,15 +27,6 @@ public class LeavingRegisterController {
 	@GetMapping("leavingRegister/{id}")
 	public String displayAdd(@PathVariable Integer id,Model model) {
 		LeavingRegisterentity leavingRegister = leavingRegisterService.getid(id);
-//		LeavingRegisterrequest leavingRegisterrequest = new LeavingRegisterrequest();
-		
-//		leavingRegisterrequest.setAttendance_id(leavingRegister.getAttendance_id());
-//		leavingRegisterrequest.setUser_id(leavingRegister.getUser_id());
-//		leavingRegisterrequest.setStatus(leavingRegister.getStatus());
-//		leavingRegisterrequest.setLeaving_date(leavingRegister.getLeaving_date());
-//		leavingRegisterrequest.setLeaving_time(leavingRegister.getLeaving_time());
-//		leavingRegisterrequest.setBreak_time(leavingRegister.getBreak_time());
-//		leavingRegisterrequest.setRemarks(leavingRegister.getRemarks());
 
 		
 		model.addAttribute("leavingRegister", leavingRegister);
