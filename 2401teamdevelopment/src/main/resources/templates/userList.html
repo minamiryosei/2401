@@ -26,7 +26,7 @@
           <td th:text="*{furigana}"></td>
           <td th:text="*{mail}"></td>
           <td th:text="*{password}"></td>
-          <td id="not_background-color" class="button"><a href="userEditDelete" class="btn-text">編集</a>
+          <td id="not_background-color" class="button"><a th:href="@{/userEditDelete/{user_id}(user_id=*{user_id})}" class="btn-text">編集</a>
           </td>
         </tr>
       </tbody>
