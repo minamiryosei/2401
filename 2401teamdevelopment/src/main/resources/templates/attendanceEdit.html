@@ -13,12 +13,11 @@
 	<header>
 		<img src="img/khb.png" class="page-banner" alt="勤怠編集バナー画像">
 	</header>
-	<div class="container">
-		<div th:if="${validationError}" th:each="error : ${validationError}">
-			<label class="text-danger" th:text="${error}"></label>
-		</div>
-
-		<form th:action="@{/attendanceEdit/update}" th:object="${AttendanceEditRequest}" th:method="post">
+	<form th:action="@{/attendanceEdit/update}" th:object="${AttendanceEditRequest}" th:method="post">
+		<div class="container">
+			<div th:if="${validationError}" th:each="error : ${validationError}">
+				<label class="text-danger" th:text="${error}"></label>
+			</div>
 			<div class="contents">
 				<div>
 					<div class="ae-line">
@@ -121,7 +120,7 @@
 				</div>
 
 			</div>
-		</form>
+	</form>
 
 </body>
 
