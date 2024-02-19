@@ -42,6 +42,6 @@ public class GoingRegisterController {
 		}
 
 		goingRegisterService.create(goingRegisterRequest);
-		return "Sample";
+		return "myPage";
 	}
 }
