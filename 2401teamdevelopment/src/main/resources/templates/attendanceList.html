@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="style.css">
+<title>AttendanceList</title>
+<link th:href="@{/css/attendanceList.css}" rel="stylesheet">
 </head>
 
 <body>
 	<header>
-		<img src="img/kib.png" width="1400px" height="150px">
+		<img src="img/kib.png" class="page-banner" alt="勤怠一覧バナー画像">
 	</header>
 	<div class="contents">
 		<table class="ki-table">
@@ -28,25 +28,25 @@
 	        	</tr>
       		</thead>
 			<tbody>
-		        <tr th:each="user : ${userlist}" th:object="${user}" class="align-middle">
-		          <td class="ki-td"></td>
-		          <td class="ki-td"></td>
-		          <td class="ki-td"></td>
-		          <td class="ki-td"></td>
-		          <td class="ki-td"></td>
-		          <td class="ki-td"></td>
-		          <td class="ki-td"></td>
-		          <td class="ki-td"></td>
-		          <td class="ki-td"></td>
-		          <td class="ki-td"></td>
-		          <td class="ki-td"></td>
-		          <td><a th:href="@{/user/{id}(id=*{id})}" class="btn btn-secondary">編集</a></td>
+		        <tr th:each="attendanceList : ${attendanceList}" th:object="${attendanceList}" class="align-middle">
+		          <td th:text="*{attendance_id}" class="ki-td"></td>
+		          <td th:text="*{user_id}" class="ki-td"></td>
+		          <td th:text="*{status}" class="ki-td"></td>
+		          <td th:text="${#dates.format(attendanceList.going_date, 'yyyy/MM/dd')}" class="ki-td"></td>
+		          <td th:text="${#dates.format(attendanceList.going_time, 'HH:mm')}" class="ki-td"></td>
+		          <td th:text="${#dates.format(attendanceList.leaving_date, 'yyyy/MM/dd')}" class="ki-td"></td>
+		          <td th:text="${#dates.format(attendanceList.leaving_time, 'HH:mm')}" class="ki-td"></td>
+		          <td th:text="${#dates.format(attendanceList.working_time, 'HH:mm')}" class="ki-td"></td>
+		          <td th:text="${#dates.format(attendanceList.break_time, 'HH:mm')}" class="ki-td"></td>
+		          <td th:text="*{edit_reason}" class="ki-td"></td>
+		          <td th:text="*{remarks}" class="ki-td"></td>
+		          <td class="b"><div class="button"><a href="attendanceEdit.html" class="btn-text">編集</a></div></td>
 		        </tr>
 			</tbody>
     	</table>
 		<div></div>
-		<div class="bb">
-			<button type="button" class="button">戻る</button>
+		<div class="list-b">
+			<a href="myPage.html" class="button">戻る</a>
 		</div>
 	</div>
 </body>
