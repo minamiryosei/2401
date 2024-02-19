@@ -47,7 +47,7 @@ public class userEditDeleteController {
     userUpdateRequest.setMail(user.getMail());
     userUpdateRequest.setPassword(user.getPassword());
     model.addAttribute("userUpdateRequest", userUpdateRequest);
-    return "userEditDelete";
+    return "user/list";
   }
 
   /**
@@ -67,7 +67,7 @@ public class userEditDeleteController {
       }
       model.addAttribute("validationError", errorList);
       model.addAttribute("userUpdateRequest", userUpdateRequest);
-      return "userEditDelete";
+      return "user/list";
     }
 
     // ユーザー情報の更新
