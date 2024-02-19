@@ -40,7 +40,7 @@
 		          <td th:text="${#dates.format(attendanceList.break_time, 'HH:mm')}" class="ki-td"></td>
 		          <td th:text="*{edit_reason}" class="ki-td"></td>
 		          <td th:text="*{remarks}" class="ki-td"></td>
-		          <td class="b"><div class="button"><a href="attendanceEdit.html" class="btn-text">編集</a></div></td>
+		          <td class="b"><div class="button"><a th:href="@{/attendanceEdit/{attendance_id}(attendance_id=*{attendance_id})}" class="btn-text">編集</a></div></td>
 		        </tr>
 			</tbody>
     	</table>
