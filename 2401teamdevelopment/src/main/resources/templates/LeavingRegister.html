@@ -12,7 +12,7 @@
 <body>
 	<div>
 		<header>
-			<img src="images/ttb.png" th:src="@{/images/ttb.png}" width="1400px" height="150px">
+			<img th:src="@{/images/ttb.png}" width="1400px" height="150px">
 		</header>
 	</div>
 	<form th:action="@{/leavingRegister/create}" th:object="${leavingRegister}" th:method="post">

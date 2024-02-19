@@ -50,6 +50,6 @@ public class LeavingRegisterController {
 		}
 
 		leavingRegisterService.create(leavingRegisterRequest);
-		return "Sample";
+		return "myPage";
 	}
 }
