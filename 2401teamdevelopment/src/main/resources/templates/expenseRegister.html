@@ -15,7 +15,7 @@
 	</div>
 
 	<form th:action="@{/expenseRegister/create}" th:object="${expenseRegisterRequest}" th:method="post">
-		
+
 <!--			<label class="text-danger" th:text="${error}"></label>-->
 		</div>
 
@@ -60,13 +60,13 @@
 		<div class="gyou">
 			<p class="ksmaru-b">⚫️</p>
 			<p>備考</p>
-			<textarea class="b-box" placeholder="１００文字以内で入力してください。" 
+			<textarea class="b-box" placeholder="１００文字以内で入力してください。"
 				th:field=" *{remarks}"></textarea>
 		</div>
 
 		<div class="bb">
 			<button type="submit"  class="btn-text">登録</button>
-			<button type="button" href="user/myPage"  class="button">戻る</button>
+			<button type="button"  class="button"><a href="/myPage">戻る</a></button>
 		</div>
 	</form>
 </body>

@@ -9,7 +9,7 @@ p {
 
 .label{
 	color:red;
-	
+
 }
 
 .content {
@@ -42,12 +42,12 @@ p {
     font-size: 20px;
     outline: none;
     border: none;
-    
+
 }
 
 /*申請日*/
 .form_input {
-	
+
     width: 600px;
     height: 30px;
     border-radius: 5px;
@@ -78,7 +78,7 @@ p {
     border: none;
     outline: none;
     background-color: #e2e2e2;
-    
+
     font-size: 20px;
 }
 
@@ -94,8 +94,8 @@ p {
     outline: none;
     background-color: #e2e2e2;
     font-size: 20px;
-    
-    
+
+
 }
 .form_date {
     position: relative;
@@ -167,4 +167,9 @@ p {
       width: 50%;
     margin: 0 auto;
     display: flex;
+}
+
+a {
+	color: #ffffff;
+	text-decoration: none;
 }
