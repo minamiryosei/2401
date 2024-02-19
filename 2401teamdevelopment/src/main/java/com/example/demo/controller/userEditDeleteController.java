@@ -32,41 +32,6 @@ public class userEditDeleteController {
   private userEditDeleteService userService;
 
   /**
-   * ユーザー情報一覧画面を表示
-   * @param model Model
-   * @return ユーザー情報一覧画面
-   */
-  @GetMapping(value = "/user/list")
-  public String displayList(Model model) {
-    List<userEditDelete> userlist = userService.searchAll();
-    model.addAttribute("userlist", userlist);
-    return "user/list";
-  }
-
-  /**
-   * ユーザー新規登録画面を表示
-   * @param model Model
-   * @return ユーザー情報一覧画面
-   */
-  @GetMapping(value = "userRegister")
-  public String displayAdd(Model model) {
-    return "userRegister";
-  }
-
-  /**
-   * ユーザー情報詳細画面を表示
-   * @param id 表示するユーザーID
-   * @param model Model
-   * @return ユーザー情報詳細画面
-   */
-  @GetMapping("/user/{id}")
-  public String displayView(@PathVariable Long id, Model model) {
-    userEditDelete user = userService.findById(id);
-    model.addAttribute("userData", user);
-    return "user/view";
-  }
-
-  /**
    * ユーザー編集画面を表示
    * @param id 表示するユーザーID
    * @param model Model
@@ -82,7 +47,7 @@ public class userEditDeleteController {
     userUpdateRequest.setMail(user.getMail());
     userUpdateRequest.setPassword(user.getPassword());
     model.addAttribute("userUpdateRequest", userUpdateRequest);
-    return "user/edit";
+    return "userEditDelete";
   }
 
   /**
@@ -101,12 +66,13 @@ public class userEditDeleteController {
         errorList.add(error.getDefaultMessage());
       }
       model.addAttribute("validationError", errorList);
-      return "user/edit";
+      model.addAttribute("userUpdateRequest", userUpdateRequest);
+      return "userEditDelete";
     }
 
     // ユーザー情報の更新
     userService.update(userUpdateRequest);
-    return String.format("redirect:/user/%d", userUpdateRequest.getId());
+    return String.format("redirect:/userEditDelete", userUpdateRequest.getId());
   }
 
 

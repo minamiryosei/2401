@@ -18,7 +18,7 @@
         <label class="text-danger" th:text="${error}"></label>
     </div>
     
-    <form th:action="@{/user/update}" th:object="${userEditDeleteUpdateRequest}" th:method="post">
+    <form th:action="@{/userEditDelete}" th:object="${ValidationError}" th:method="post">
 
     <div class="contents">
        <div>
@@ -68,8 +68,8 @@
     </div>
 
     <div class="ueb">
-        <button th:href="@{/userEditDelete/{id}/edit(id=*{id})}" class="button">登録</button>
-        <button th:href="@{/userEditDelete/{id}/delete(id=*{id})}" class="button">削除</button>
+        <button type="submit" class="button">登録</button>
+        <button type="button" class="button"><a th:href="@{/user/{id}/delete(id=*{id})}">削除</a></button>
         <button href="attendanceList.html" class="button">戻る</button>
     </div>
 
