@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.demo.dto.LeavingRegisterrequest;
 import com.example.demo.entity.LeavingRegisterentity;
-import com.example.demo.request.LeavingRegisterrequest;
 import com.example.demo.service.LeavingRegisterService;
 
 @Controller
@@ -28,11 +28,11 @@ public class LeavingRegisterController {
 	public String displayAdd(@PathVariable Integer id,Model model) {
 		LeavingRegisterentity leavingRegister = leavingRegisterService.getid(id);
 
-		
+
 		model.addAttribute("leavingRegister", leavingRegister);
 		return "LeavingRegister";
 	}
-	
+
 
 	@PostMapping("/leavingRegister/create")
 	public String create(@Validated @ModelAttribute LeavingRegisterrequest leavingRegisterRequest,
