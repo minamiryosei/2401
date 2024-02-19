@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <link th:href="@{/css/userList.css}" rel="stylesheet">
+
+<body>
+  <header>
+    <img th:src="@{/images/yib.png}" width="1400px" height="150px" alt="">
+  </header>
+
+  <div class="contents">
+    <table class="yi-table">
+      <thead>
+        <tr>
+          <th>ユーザーID</th>
+          <th>名前</th>
+          <th>フリガナ</th>
+          <th>メールアドレス</th>
+          <th>パスワード</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr th:each="user : ${userList}" th:object="${user}" class="align-middle">
+          <td th:text="*{user_id}"></td>
+          <td th:text="*{name}"></td>
+          <td th:text="*{furigana}"></td>
+          <td th:text="*{mail}"></td>
+          <td th:text="*{password}"></td>
+          <td id="not_background-color" class="button"><a href="userEditDelete" class="btn-text">編集</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="bb">
+      <div button="buttun"><a href="myPage.html" class="btn-text">戻る</a></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+header {
+    text-align: center;
+}
+
+p {
+    font-size: 20px; 
+}
+
+.content {
+    margin-top: 70px;
+}
+
+.yi-table{
+    margin: 0 auto;
+    margin-top: 70px;
+}
+
+td {
+    width: 220px;
+    height: 30px;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    padding: 0 2px;
+}
+
+.gyou {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.bb {
+ width: 60px;
+ height: 30px;
+ font-size: 20px;
+ background-color: #777777;
+ border-radius: 5px;
+ border: none;
+ text-align: center;
+ color: #ffffff;
+ margin: 60px auto 
+}
+
+.button{
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+    background-color: #777777;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    color: #ffffff;
+}
+
+.btn-text {
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+    background-color: #777777;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    color: #ffffff;
+    text-decoration:none;
+}
