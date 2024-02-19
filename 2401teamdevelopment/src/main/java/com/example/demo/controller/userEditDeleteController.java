@@ -47,7 +47,7 @@ public class userEditDeleteController {
     userUpdateRequest.setMail(user.getMail());
     userUpdateRequest.setPassword(user.getPassword());
     model.addAttribute("userUpdateRequest", userUpdateRequest);
-    return "user/list";
+    return "userEditDelete";
   }
 
   /**
@@ -56,7 +56,7 @@ public class userEditDeleteController {
    * @param model Model
    * @return ユーザー情報詳細画面
    */
-  @RequestMapping(value = "/user/{id}/update", method = RequestMethod.POST)
+  @RequestMapping(value = "/user/update", method = RequestMethod.POST)
   public String update(@Validated @ModelAttribute userEditDeleteUpdateRequest userUpdateRequest, BindingResult result, Model model) {
 
     if (result.hasErrors()) {
@@ -65,14 +65,14 @@ public class userEditDeleteController {
       for (ObjectError error : result.getAllErrors()) {
         errorList.add(error.getDefaultMessage());
       }
-      model.addAttribute("validationError", errorList);
+      model.addAttribute("ValidationError", errorList);
       model.addAttribute("userUpdateRequest", userUpdateRequest);
-      return "user/list";
+      return "userEditDelete";
     }
 
     // ユーザー情報の更新
     userService.update(userUpdateRequest);
-    return String.format("redirect:/userEditDelete", userUpdateRequest.getId());
+    return String.format("redirect:/userEditDelete/%d/edit", userUpdateRequest.getId());
   }
 
 
@@ -86,6 +86,6 @@ public class userEditDeleteController {
   public String delete(@PathVariable Long id, Model model) {
     // ユーザー情報の削除
     userService.delete(id);
-    return "redirect:/user/list";
+    return "sample";
   }
 }

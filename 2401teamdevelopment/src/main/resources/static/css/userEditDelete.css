@@ -56,6 +56,9 @@ p{
     border: none;
 }
 
+.link{color: #ffffff;
+text-decoration:none;}
+
 input[type="text"]{
     width: 520px;
     height: 30px;
