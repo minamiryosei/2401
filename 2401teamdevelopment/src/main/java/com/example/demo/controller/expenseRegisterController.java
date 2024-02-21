@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.dto.expenseRegisterRequest;
-import com.example.demo.entity.expenseRegisterEntity;
 import com.example.demo.service.expenseRegisterService;
 /**
  * ユーザー情報 Controller
@@ -25,18 +24,7 @@ public class expenseRegisterController {
    */
   @Autowired
   private expenseRegisterService expenseRegisterService;
-  
-  /**
-   * マイページ画面を表示
-   * @param model Model
-   * @return マイページ画面
-   */
-  @GetMapping(value = "/myPage")
-  public String displayList(Model model) {
-    List<expenseRegisterEntity> usermyPage = expenseRegisterService.searchAll();
-    model.addAttribute("usermyPage", usermyPage);
-    return "myPage";
-  }
+
   /**
    * 経費申請画面を表示
    * @param model Model
@@ -55,7 +43,7 @@ public class expenseRegisterController {
    */
   @PostMapping(value="/expenseRegister/create")
   public String Create(@Validated @ModelAttribute expenseRegisterRequest expenseRegisterRequest, BindingResult result, Model model) {
-	  
+
     if (result.hasErrors()) {
     	// 入力チェックエラーの場合
       List<String> errorList = new ArrayList<String>();
@@ -65,12 +53,12 @@ public class expenseRegisterController {
       model.addAttribute("validationError", errorList);
       return "expenseRegister";
     }
-    
+
     // 経費申請情報の登録
     expenseRegisterService.create(expenseRegisterRequest);
     return "redirect:/myPage";
   }
-  
-  
-  
+
+
+
 }
