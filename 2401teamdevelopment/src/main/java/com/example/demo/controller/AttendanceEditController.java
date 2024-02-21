@@ -29,14 +29,14 @@ public class AttendanceEditController {
 	 * 勤怠編集情報 Service
 	 */
 	@Autowired
-	private AttendanceEditService attendanceEditService; 
+	private AttendanceEditService attendanceEditService;
 /**
  * 勤怠編集画面を表示
  * @param attendance_id 表示する勤怠ID
  * @param model Model
  * @return 勤怠編集画面
  */
-@GetMapping("attendanceEdit/{attendance_id}/edit")
+@GetMapping("attendanceEdit/{attendance_id}")
 public String displayattendanceEditEdit(@PathVariable Integer attendance_id, Model model) {
   AttendanceEditEntity attendanceEdit = attendanceEditService.findById(attendance_id);
   AttendanceEditRequest AttendanceEditRequest = new AttendanceEditRequest();
@@ -73,6 +73,6 @@ public String attendanceEditUpdate(@Validated @ModelAttribute AttendanceEditRequ
   }
   // 勤怠情報の更新
   attendanceEditService.update(attendanceEditRequest);
-  return String.format("redirect:/attendanceEdit/%d/edit", attendanceEditRequest.getAttendance_id());
+  return "redirect:/attendanceList";
 }
 }
