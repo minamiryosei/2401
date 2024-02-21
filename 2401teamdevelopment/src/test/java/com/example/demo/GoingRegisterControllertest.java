@@ -74,7 +74,7 @@ public class GoingRegisterControllertest {
 	 *  テストメソッド GoingRegisterUpdate() 異常系テスト								
 	 */
 	@Test
-	public void testUpdateGoingRegisterError() throws Exception {
+	public void testCreateGoingRegisterError() throws Exception {
 		GoingRegisterrequest testRequest = new GoingRegisterrequest();
 		testRequest.setUser_id("");
 		testRequest.setStatus("");
