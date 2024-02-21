@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>AttendanceEdit</title>
+	<link rel="stylesheet" href="path/to/reset.css">
+	<link rel="stylesheet" th:href="@{/css/attendanceEdit.css}">
+	<link rel="stylesheet" href="../static/css/attendanceEdit.css">
+</head>
+
+<body>
+	<header>
+		<img src="img/khb.png" class="page-banner" alt="勤怠編集バナー画像">
+	</header>
+	<form th:action="@{/attendanceEdit/update}" th:object="${AttendanceEditRequest}" th:method="post">
+		<div class="container">
+			<div th:if="${validationError}" th:each="error : ${validationError}">
+				<label class="text-danger" th:text="${error}"></label>
+			</div>
+			<div class="contents">
+				<div>
+					<div class="ae-line">
+						<p class="ae-circle">●</p>
+						<p>勤怠ID</p>
+						<div class="box">
+							<input type="text" class="in" th:field="*{attendance_id}" readonly></input>
+						</div>
+					</div>
+					<div class="ae-line">
+						<p class="ae-circle">●</p>
+						<p>ユーザーID</p>
+						<div class="box">
+							<input type="text" th:field="*{user_id}" id="uname" name="name" size="65" class="in" />
+						</div>
+					</div>
+					<div class="ae-line">
+						<p class="ae-circle">●</p>
+						<p>ステータス</p>
+						<div class="box">
+							<div class="cp_ipselect cp_sl01">
+								<select required th:field="*{status}" th:value="*{status}">
+									<option value="出勤ステータス"> 出勤ステータス▼</option>
+									<option value="出勤">出勤</option>
+									<option value="退勤">退勤</option>
+									<option value="遅刻">遅刻</option>
+									<option value="早退">早退</option>
+									<option value="欠席">欠席</option>
+									<option value="代休">代休</option>
+									<option value="所定休">所定休</option>
+									<option value="有休">有休</option>
+									<option value="その他">その他</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="ae-line">
+						<p class="ae-circle">●</p>
+						<p>出勤日</p>
+						<div class="box">
+							<input type="date" th:field="*{going_date}" class="in" />
+						</div>
+					</div>
+					<div class="ae-line">
+						<p class="ae-circle">●</p>
+						<p>出勤時間</p>
+						<div class="box">
+							<input type="time" th:field="*{going_time}" class="in" />
+						</div>
+					</div>
+					<div class="ae-line">
+						<p class="ae-circle">●</p>
+						<p>退勤日</p>
+						<div class="box">
+							<input type="date" th:field="*{leaving_date}" class="in" />
+						</div>
+					</div>
+					<div class="ae-line">
+						<p class="ae-circle">●</p>
+						<p>退勤時間</p>
+						<div class="box">
+							<input type="time" th:field="*{leaving_time}" class="in" />
+						</div>
+					</div>
+					<div class="ae-line">
+						<p class="ae-circle">●</p>
+						<p>稼働時間</p>
+						<div class="box">
+							<input type="text" th:field="*{working_time}" size="65" class="in" />
+						</div>
+					</div>
+					<div class="ae-line">
+						<p class="ae-circle">●</p>
+						<p>休憩時間</p>
+						<div class="box">
+							<input type="text" th:field="*{break_time}" size="65" class="in" />
+						</div>
+					</div>
+					<div class="ae-line">
+						<p class="ae-circle">●</p>
+						<p>修正理由</p>
+						<div class="sr-box">
+							<textarea th:field="*{edit_reason}" cols="65" rows="3" class="in"></textarea>
+						</div>
+					</div>
+					<div class="ae-line">
+						<div class="ae-circle-line">
+							<p class="ae-circle-notes">●</p>
+							<p>備考</p>
+						</div>
+						<div class="b-box">
+							<textarea th:field="*{remarks}" cols="65" rows="3" class="in"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="bb">
+					<button type="submit" href="attendanceEdit/{attendance_id}/edit" class="btn-text">登録</button>
+					<button href="attendanceEdit/{attendance_id}/edit" class="button">戻る</button>
+
+				</div>
+
+			</div>
+	</form>
+
+</body>
+
+</html>
