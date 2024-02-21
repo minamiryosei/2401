@@ -65,7 +65,7 @@
 						<p class="ae-circle">●</p>
 						<p>出勤時間</p>
 						<div class="box">
-							<input type="time" th:field="*{going_time}" required class="in" />
+							<input type="time" th:field="*{going_time}" class="in" />
 						</div>
 					</div>
 					<div class="ae-line">
@@ -114,8 +114,8 @@
 					</div>
 				</div>
 				<div class="bb">
-					<button type="submit" href="attendanceEdit.html" class="btn-text">登録</button>
-					<button href="attendanceEdit.html" class="button">戻る</button>
+					<button type="submit" href="attendanceEdit/{attendance_id}/edit" class="btn-text">登録</button>
+					<button href="attendanceEdit/{attendance_id}/edit" class="button">戻る</button>
 
 				</div>
 

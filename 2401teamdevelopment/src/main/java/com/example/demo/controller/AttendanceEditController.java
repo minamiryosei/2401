@@ -68,6 +68,7 @@ public String attendanceEditUpdate(@Validated @ModelAttribute AttendanceEditRequ
       errorList.add(error.getDefaultMessage());
     }
     model.addAttribute("validationError", errorList);
+    model.addAttribute("AttendanceEditRequest", attendanceEditRequest);
     return "attendanceEdit";
   }
   // 勤怠情報の更新
