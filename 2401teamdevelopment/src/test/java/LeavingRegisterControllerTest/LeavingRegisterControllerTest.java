@@ -18,7 +18,7 @@ import com.example.demo.service.LeavingRegisterService;
 	* テストクラス kanggo LeavingRegisterController.						
 	*/
 @WebMvcTest(LeavingRegisterController.class)
-public class	LeavingRegisterControllerTest {
+public class LeavingRegisterControllerTest {
 
 	@MockBean
 	LeavingRegisterService LeavingRegisterService;
@@ -49,22 +49,23 @@ public class	LeavingRegisterControllerTest {
 
 	/**						
 	* テストメソッド  LeavingRegisterUpdate() 正常系テスト						
-	*/						
-	@Test						
-	public void testUpdateLeavingRegisterSucess() throws Exception {						
-		LeavingRegisterrequest testRequest = new LeavingRegisterrequest();					
+	*/
+	@Test
+	public void testUpdateLeavingRegisterSucess() throws Exception {
+		LeavingRegisterrequest testRequest = new LeavingRegisterrequest();
+		testRequest.setAttendance_id("1");
 		testRequest.setStatus("退勤");
 		testRequest.setLeaving_date("2024/02/19");
 		testRequest.setLeaving_time("18:00");
 		testRequest.setBreak_time("01:00");
-		testRequest.setRemarks("4");
 		
-		mockMvc.perform((post("/user/create")).flashAttr("attendanceEdit Request", testRequest))					
-			.andExpect(model().hasNoErrors())				
-			.andExpect(model().attribute("attendanceEditRequest", testRequest))				
-			.andExpect(view().name("redirect:/attendanceEdit/%d/edit"));				
-							
-		verify(LeavingRegisterService , times(1)).create(testRequest);					
+
+		mockMvc.perform((post("/user/create")).flashAttr("LeavingRegisterRequest", testRequest))
+				.andExpect(model().hasNoErrors())
+				.andExpect(model().attribute("LeavingRegisterRequest", testRequest))
+				.andExpect(view().name("LeavingRegister"));
+
+		verify(LeavingRegisterService, times(1)).create(testRequest);
 		//verify([モックオブジェクト], times([回数])).[テストするメソッド]([引数]);					
 	}
 
@@ -78,7 +79,7 @@ public class	LeavingRegisterControllerTest {
 		testRequest.setLeaving_date("");
 		testRequest.setLeaving_time("");
 		testRequest.setBreak_time("");
-		testRequest.setRemarks("");
+	
 		
 		ate")).flashAttr("attendanceEditRequest", testRequest))
 				.andExpect(model().hasErrors())
