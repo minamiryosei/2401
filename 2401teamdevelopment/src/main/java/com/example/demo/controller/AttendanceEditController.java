@@ -73,6 +73,6 @@ public String attendanceEditUpdate(@Validated @ModelAttribute AttendanceEditRequ
   }
   // 勤怠情報の更新
   attendanceEditService.update(attendanceEditRequest);
-  return String.format("redirect:/attendanceEdit/%d/edit", attendanceEditRequest.getAttendance_id());
+  return "redirect:/attendanceList";
 }
 }
