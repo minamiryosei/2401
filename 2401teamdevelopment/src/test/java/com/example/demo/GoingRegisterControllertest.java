@@ -51,22 +51,22 @@ public class GoingRegisterControllertest {
 
 	/**								
 	 * テストメソッド  GoingRegisterUpdate() 正常系テスト								
-	 */								
-	@Test								
-	public void testUpdateGoingRegisterSucess() throws Exception {								
-		GoingRegisterrequest testRequest = new GoingRegisterrequest();							
+	 */
+	@Test
+	public void testUpdateGoingRegisterSucess() throws Exception {
+		GoingRegisterrequest testRequest = new GoingRegisterrequest();
 		testRequest.setUser_id("1");
 		testRequest.setStatus("出勤");
 		testRequest.setGoing_date("2024/02/19");
 		testRequest.setGoing_time("09:00");
 		testRequest.setRemarks("4");
-		
-		mockMvc.perform((post("/user/create")).flashAttr("GoingRegisterRequest", testRequest))							
-		.andExpect(model().hasNoErrors())						
-		.andExpect(model().attribute("GoingRegisterrRequest", testRequest))						
-		.andExpect(view().name("redirect:/GoingRegister/%d/create"));						
 
-		verify(GoingRegisterservice , times(1)).create(testRequest);							
+		mockMvc.perform((post("/user/create")).flashAttr("GoingRegisterRequest", testRequest))
+				.andExpect(model().hasNoErrors())
+				.andExpect(model().attribute("GoingRegisterrRequest", testRequest))
+				.andExpect(view().name("redirect:/GoingRegister/%d/create"));
+
+		verify(GoingRegisterservice, times(1)).create(testRequest);
 		//verify([モックオブジェクト], times([回数])).[テストするメソッド]([引数]);							
 	}
 
@@ -81,7 +81,7 @@ public class GoingRegisterControllertest {
 		testRequest.setGoing_date("");
 		testRequest.setGoing_time("");
 		testRequest.setRemarks("");
-		
+
 		mockMvc.perform((post("/user/create")).flashAttr("GoingRegisterRequest", testRequest))
 				.andExpect(model().hasErrors())
 				.andExpect(model().attribute("GoingRegisterRequest", testRequest))
