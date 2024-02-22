@@ -56,7 +56,7 @@ public class expenseRegisterController {
 
     // 経費申請情報の登録
     expenseRegisterService.create(expenseRegisterRequest);
-    return "redirect:/myPage";
+    return "redirect:/mypage";
   }
 
 
