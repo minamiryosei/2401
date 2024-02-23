@@ -29,8 +29,8 @@ public class LeavingRegisterentity {
 
 	@Column(name = "status")
 	private String status;
-	
-	
+
+
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "leaving_date")
 	private LocalDate leaving_date;
@@ -39,6 +39,7 @@ public class LeavingRegisterentity {
 	@Column(name = "leaving_time")
 	private LocalTime leaving_time;
 
+	@DateTimeFormat(pattern = "HH:mm")
 	@Column(name = "break_time")
 	private LocalTime break_time;
 
