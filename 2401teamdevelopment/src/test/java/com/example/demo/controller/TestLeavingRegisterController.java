@@ -25,6 +25,10 @@ class TestLeavingRegisterController {
 	@Autowired
 	private MockMvc mockMvc;
 
+	/**
+	 * 【正常系】GETリクエストが正常に処理され、LeavingRegister画面が表示されることを検証するテストケース
+	 * @throws Exception
+	 */
 	@Test
 	public void successfullyDisplayAdd() throws Exception {
 		LeavingRegisterentity leavingRegister = new LeavingRegisterentity();
