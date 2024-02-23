@@ -28,7 +28,7 @@ class TestAttendanceListController {
 
 
 	/**
-	 * 【正常系】GETリクエストが正常に処理され、attendanceEdit画面が表示されることを検証するテストケース
+	 * 【正常系】GETリクエストが正常に処理され、attendanceList画面が表示されることを検証するテストケース
 	 * @throws Exception
 	 */
 	@Test
