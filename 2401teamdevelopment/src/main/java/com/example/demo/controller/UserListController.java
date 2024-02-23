@@ -39,6 +39,6 @@ public class UserListController {
   public String userList(Model model) {
     List<UserListEntity> userList = userlistService.searchAll();
     model.addAttribute("userList", userList);
-    return "/userList";
+    return "userList";
   }
 }
