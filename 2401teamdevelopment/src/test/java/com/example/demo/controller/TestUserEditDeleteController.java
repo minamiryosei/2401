@@ -22,6 +22,10 @@ class TestUserEditDeleteController{
 	@Autowired
 	private MockMvc mockMvc;
 
+	/**
+	 * 【正常系】GETリクエストが正常に処理され、userEditDelete画面が表示されることを検証するテストケース
+	 * @throws Exception
+	 */
 	@Test
 	public void successfullyDisplayAdd() throws Exception {
 		userEditDelete user = new userEditDelete();
