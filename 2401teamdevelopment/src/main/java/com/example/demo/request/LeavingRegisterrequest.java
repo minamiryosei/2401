@@ -20,7 +20,7 @@ public class LeavingRegisterrequest implements Serializable {
 	@NotNull(message = "※ユーザーIDを入力してください")
 	private Integer user_id;
 
-	@NotNull(message = "※ステータスの選択をしてください")
+	@NotNull
 	private String status;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
