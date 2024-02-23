@@ -17,7 +17,7 @@ import com.example.demo.entity.LeavingRegisterentity;
 import com.example.demo.service.LeavingRegisterService;
 
 @WebMvcTest(LeavingRegisterController.class)
-class TestLeavingRegisterController {
+class LeavingRegisterControllerTest {
 
 	@MockBean
 	LeavingRegisterService leavingRegisterService;

@@ -18,7 +18,7 @@ import com.example.demo.entity.AttendanceListEntity;
 import com.example.demo.service.AttendanceListService;
 
 @WebMvcTest(AttendanceListController.class)
-class TestAttendanceListController {
+class AttendanceListControllerTest {
 
 	@MockBean
 	AttendanceListService attendanceListService;

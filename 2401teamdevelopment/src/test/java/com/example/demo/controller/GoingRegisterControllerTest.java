@@ -9,26 +9,28 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.example.demo.service.expenseRegisterService;
+import com.example.demo.service.GoingRegisterservice;
 
-@WebMvcTest(expenseRegisterController.class)
-class TestExpenseRegisterController {
+@WebMvcTest(GoingRegisterController.class)
+class GoingRegisterControllerTest {
 
 	@MockBean
-	expenseRegisterService expenseRegisterService;
+	GoingRegisterservice goingRegisterservice;
 
 	@Autowired
 	private MockMvc mockMvc;
 
 	/**
-	 * 【正常系】GETリクエストが正常に処理され、expenseRegister画面が表示されることを検証するテストケース
+	 * 【正常系】GETリクエストが正常に処理され、GoingRegister画面が表示されることを検証するテストケース
 	 * @throws Exception
 	 */
 	@Test
 	public void successfullyDisplayAdd() throws Exception {
-		mockMvc.perform(get("/expenseRegister"))
+		mockMvc.perform(get("/goingRegister"))
 		.andExpect(status().isOk())
-		.andExpect(model().attributeExists("expenseRegisterRequest"))
-		.andExpect(view().name("expenseRegister"));
+		.andExpect(model().attributeExists("goingRegisterrequest"))
+		.andExpect(view().name("GoingRegister"));
 	}
+
+
 }

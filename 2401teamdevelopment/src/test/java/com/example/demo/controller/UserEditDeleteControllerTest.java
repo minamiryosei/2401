@@ -14,7 +14,7 @@ import com.example.demo.entity.userEditDelete;
 import com.example.demo.service.userEditDeleteService;
 
 @WebMvcTest(userEditDeleteController.class)
-class TestUserEditDeleteController{
+class UserEditDeleteControllerTest{
 
 	@MockBean
 	userEditDeleteService userEditDeleteService;
