@@ -11,7 +11,7 @@
 
 <body>
 	<header>
-		<img src="img/khb.png" class="page-banner" alt="勤怠編集バナー画像">
+		<img th:src="@{/images/khb.png}" class="page-banner" alt="勤怠編集バナー画像">
 	</header>
 	<form th:action="@{/attendanceEdit/update}" th:object="${AttendanceEditRequest}" th:method="post">
 		<div class="container">
@@ -115,7 +115,7 @@
 				</div>
 				<div class="bb">
 					<button type="submit" href="attendanceEdit/{attendance_id}/edit" class="btn-text">登録</button>
-					<button type="button"  class="button"><a href="/mypage">戻る</a></button>
+					<button type="button"  class="button"><a href="/attendanceList">戻る</a></button>
 
 				</div>
 
