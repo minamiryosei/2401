@@ -29,6 +29,6 @@ public class GoingRegisterrequest implements Serializable {
 	@NotNull(message = "※出勤時間を入力してください")
 	private LocalTime going_time;
 
-	@Length(max = 100)
+	@Length(max = 100, message = "備考は100文字以内で入力してください")
 	private String remarks;
 }
