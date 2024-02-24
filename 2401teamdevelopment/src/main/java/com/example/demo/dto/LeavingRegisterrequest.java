@@ -16,7 +16,7 @@ public class LeavingRegisterrequest implements Serializable {
 
 	@NotNull
 	private Integer attendance_id;
-	
+
 	@NotNull(message = "※ユーザーIDを入力してください")
 	private Integer user_id;
 
@@ -34,6 +34,6 @@ public class LeavingRegisterrequest implements Serializable {
 	@NotNull(message = "※休憩時間を選択をしてください")
 	private LocalTime break_time;
 
-	@Length(max = 100)
+	@Length(max = 100, message = "備考は100文字以内で入力してください")
 	private String remarks;
 }
