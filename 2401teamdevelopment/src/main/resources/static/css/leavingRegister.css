@@ -58,7 +58,7 @@ width: 520px;
     display:flex ;
 }
 
-  
+
 .box{
     width:520px;
   height:30px;
@@ -109,8 +109,8 @@ width: 520px;
 
   }
 
-  .button{ 
-    
+  .button{
+
     width:60px;
     height:30px;
     font-size:20px;
@@ -121,7 +121,7 @@ width: 520px;
     text-align: center;
 
   }
- 
+
   textarea{
   width: 520px;
     height: 60px;
@@ -149,7 +149,7 @@ width: 520px;
     text-align: right;
     color:#808080;
    }
- 
+
  .btn-text{
  width: 60px;
  height: 30px;
@@ -161,4 +161,9 @@ width: 520px;
  color: #ffffff;
  text-decoration:none;
  margin-left: 10px;
+}
+
+a {
+	color: #ffffff;
+	text-decoration: none;
 }
