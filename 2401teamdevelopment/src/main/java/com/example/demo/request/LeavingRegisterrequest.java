@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
@@ -34,6 +34,7 @@ public class LeavingRegisterrequest implements Serializable {
 	@NotNull(message = "※休憩時間を選択をしてください")
 	private LocalTime break_time;
 
-	@Max(message = "※備考欄は100文字以内で入力してください", value = 100)
-	private String remarks;
-}
+	@Length(message = "※備考欄は100文字以内で入力してください", max = 100)
+	 private String remarks;
+	}
+
