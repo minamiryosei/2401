@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
@@ -29,6 +29,6 @@ public class GoingRegisterrequest implements Serializable {
 	@NotNull(message = "※出勤時間を入力してください")
 	private LocalTime going_time;
 
-	@Max(message = "※備考欄は100文字以内で入力してください", value = 100)
+	@Length(message = "※備考欄は100文字以内で入力してください", max = 100)
 	private String remarks;
 }
