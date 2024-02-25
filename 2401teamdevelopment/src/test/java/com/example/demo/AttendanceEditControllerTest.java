@@ -61,13 +61,13 @@ mockMvc.perform(get("attendanceEdit"))
 @Test
 public void testUpdateAttendanceEditSucess() throws Exception {
 AttendanceEditRequest testRequest = new AttendanceEditRequest();
-testRequest.setUser_id("2");
+testRequest.setUser_id(2);
 testRequest.setStatus("出勤");
-testRequest.setGoing_date("2024/02/19");
-testRequest.setGoing_time("09::00");
-testRequest.setLeaving_date("2024/02/19");
-testRequest.setLeaving_time("19:00");
-testRequest.setWorking_time("09:00");
+testRequest.setGoing_date(2024/02/19);
+testRequest.setGoing_time(09:00);
+testRequest.setLeaving_date(2024/02/19);
+testRequest.setLeaving_time(19:00);
+testRequest.setWorking_time(09:00);
 testRequest.setBreak_time("01:00");
 testRequest.setEdit_reason("申告漏れ");
 testRequest.setRemarks("休日出勤");
@@ -87,14 +87,14 @@ verify(attendanceEditService, times(1)).update(testRequest);
 @Test
 public void testUpdateAttendanceEditError() throws Exception {
 AttendanceEditRequest testRequest = new AttendanceEditRequest();
-testRequest.setUser_id("");
+testRequest.setUser_id(null);
 testRequest.setStatus("");
-testRequest.setGoing_date("");
-testRequest.setGoing_time("");
-testRequest.setLeaving_date("");
-testRequest.setLeaving_time("");
-testRequest.setWorking_time("");
-testRequest.setBreak_time("");
+testRequest.setGoing_date(null);
+testRequest.setGoing_time(null);
+testRequest.setLeaving_date(null);
+testRequest.setLeaving_time(null);
+testRequest.setWorking_time(null);
+testRequest.setBreak_time(null);
 testRequest.setEdit_reason("");
 testRequest.setRemarks("");
 
