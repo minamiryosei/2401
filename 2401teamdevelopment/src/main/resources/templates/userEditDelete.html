@@ -14,70 +14,72 @@
 	</header>
 
 
-		<div th:if="${ValidationError}" th:each="error : ${ValidationError}">
-			<label class="text-danger" th:text="${error}"></label>
+	<div th:if="${ValidationError}" th:each="error : ${ValidationError}">
+		<label class="text-danger" th:text="${error}"></label>
+	</div>
+	<div th:if="${DeleteError}" th:text="${DeleteError}"></div>
+
+	<form th:action="@{/user/update}" th:object="${userUpdateRequest}" th:method="post">
+
+		<div class="contents">
+			<div>
+				<div class="ueh">
+					<p class="uemaru">●</p>
+					<p>ユーザーID</p>
+					<div class="uebox">
+						<input type="text" th:field="*{id}">
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<div class="ueh">
+					<p class="uemaru">●</p>
+					<p>名前</p>
+					<div class="uebox">
+						<input type="text" th:field="*{name}">
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<div class="ueh">
+					<p class="uemaru">●</p>
+					<p>フリガナ</p>
+					<div class="uebox">
+						<input type="text" placeholder="全角カナ" th:field="*{furigana}">
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<div class="ueh">
+					<p class="uemaru">●</p>
+					<p>メールアドレス</p>
+					<div class="uebox">
+						<input type="text" placeholder="sample@exam.jp" th:field="*{mail}">
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<div class="ueh">
+					<p class="uemaru">●</p>
+					<p>パスワード</p>
+					<div class="uebox">
+						<input type="text" placeholder="8文字以上" th:field="*{password}">
+					</div>
+				</div>
+			</div>
 		</div>
 
-		<form th:action="@{/user/update}" th:object="${userUpdateRequest}" th:method="post">
-
-			<div class="contents">
-				<div>
-					<div class="ueh">
-						<p class="uemaru">●</p>
-						<p>ユーザーID</p>
-						<div class="uebox">
-							<input type="text" th:field="*{id}">
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<div class="ueh">
-						<p class="uemaru">●</p>
-						<p>名前</p>
-						<div class="uebox">
-							<input type="text" th:field="*{name}">
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<div class="ueh">
-						<p class="uemaru">●</p>
-						<p>フリガナ</p>
-						<div class="uebox">
-							<input type="text" placeholder="全角カナ" th:field="*{furigana}">
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<div class="ueh">
-						<p class="uemaru">●</p>
-						<p>メールアドレス</p>
-						<div class="uebox">
-							<input type="text" placeholder="sample@exam.jp" th:field="*{mail}">
-						</div>
-					</div>
-				</div>
-
-				<div>
-					<div class="ueh">
-						<p class="uemaru">●</p>
-						<p>パスワード</p>
-						<div class="uebox">
-							<input type="text" placeholder="8文字以上" th:field="*{password}">
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="ueb">
-				<button type="submit" class="button">登録</button>
-				<button type="button" class="button"><a class="link" th:href="@{/user/{id}/delete(id=*{id})}">削除</classa></button>
-				<button class="button"><a href="/myPage" class="btn-text">戻る</a></button>
-			</div>
-		</form>>
+		<div class="ueb">
+			<button type="submit" class="button">登録</button>
+			<button type="button" class="button"><a class="link" th:href="@{/user/{id}/delete(id=*{id})}">削除</classa>
+					</button>
+			<button class="button"><a href="/mypage" class="btn-text">戻る</a></button>
+		</div>
+	</form>>
 
 </body>
 
