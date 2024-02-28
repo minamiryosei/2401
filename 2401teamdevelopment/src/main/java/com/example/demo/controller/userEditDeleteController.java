@@ -82,7 +82,8 @@ public class userEditDeleteController {
 	 * ユーザー情報削除
 	 * @param id 表示するユーザーID
 	 * @param model Model
-	 * @return ユーザー情報詳細画面
+	 * @return ユーザー編集画面
+	 * @return ユーザー一覧画面
 	 */
 	@GetMapping("/user/{id}/delete")
 	public String delete(@PathVariable Long id, Model model, RedirectAttributes redirectAttributes) {
@@ -91,7 +92,6 @@ public class userEditDeleteController {
 			// ユーザー情報の削除
 			userService.delete(id);
 		} catch (DataIntegrityViolationException e) {
-//			model.addAttribute("DeleteError", "このユーザーIDは勤怠登録されているため削除できません");
 			redirectAttributes.addFlashAttribute("DeleteError", "このユーザーIDは勤怠登録されているため削除できません");
 			return String.format("redirect:/userEditDelete/{id}/edit", id);
 		}
